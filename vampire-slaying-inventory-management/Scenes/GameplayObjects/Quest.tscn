@@ -2,10 +2,68 @@
 
 [ext_resource type="Script" uid="uid://i56kwtxyltpw" path="res://Scenes/GameplayObjects/quest.gd" id="1_c0djq"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jhai"]
+size = Vector2(80, 83)
+
 [node name="Quest" type="Node2D" unique_id=1162786655 node_paths=PackedStringArray("duration", "waitTime")]
 script = ExtResource("1_c0djq")
 duration = NodePath("Duration")
 waitTime = NodePath("WaitTime")
+
+[node name="QuestBox" type="ColorRect" parent="." unique_id=1411788852]
+offset_left = -183.0
+offset_top = -228.0
+offset_right = 185.0
+offset_bottom = 229.0
+
+[node name="CharacterSlotSprite" type="ColorRect" parent="QuestBox" unique_id=629543486]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 24.0
+offset_right = 320.0
+offset_bottom = 183.0
+color = Color(0.4333519, 0.4333519, 0.4333519, 1)
+
+[node name="ItemSlots" type="Node2D" parent="QuestBox" unique_id=681755084]
+
+[node name="Slot1" type="ColorRect" parent="QuestBox/ItemSlots" unique_id=1564982938]
+offset_left = 28.0
+offset_top = 228.0
+offset_right = 109.0
+offset_bottom = 311.0
+color = Color(0.4149491, 0.4149491, 0.4149491, 1)
+
+[node name="Area2D" type="Area2D" parent="QuestBox/ItemSlots/Slot1" unique_id=102339769]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QuestBox/ItemSlots/Slot1/Area2D" unique_id=1778419715]
+position = Vector2(41, 41.5)
+shape = SubResource("RectangleShape2D_6jhai")
+
+[node name="Slot2" type="ColorRect" parent="QuestBox/ItemSlots" unique_id=854175031]
+offset_left = 143.0
+offset_top = 227.0
+offset_right = 224.0
+offset_bottom = 310.0
+color = Color(0.4149491, 0.4149491, 0.4149491, 1)
+
+[node name="Area2D" type="Area2D" parent="QuestBox/ItemSlots/Slot2" unique_id=275514005]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QuestBox/ItemSlots/Slot2/Area2D" unique_id=401398018]
+position = Vector2(41, 41.5)
+shape = SubResource("RectangleShape2D_6jhai")
+
+[node name="Slot3" type="ColorRect" parent="QuestBox/ItemSlots" unique_id=636324258]
+offset_left = 257.0
+offset_top = 226.0
+offset_right = 338.0
+offset_bottom = 309.0
+color = Color(0.4149491, 0.4149491, 0.4149491, 1)
+
+[node name="Area2D" type="Area2D" parent="QuestBox/ItemSlots/Slot3" unique_id=1548458396]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QuestBox/ItemSlots/Slot3/Area2D" unique_id=798399375]
+position = Vector2(41, 41.5)
+shape = SubResource("RectangleShape2D_6jhai")
 
 [node name="Duration" type="Timer" parent="." unique_id=208214877]
 
@@ -14,7 +72,7 @@ autostart = true
 
 [node name="StartQuest" type="Button" parent="." unique_id=990752384]
 offset_left = -87.0
-offset_top = 27.0
+offset_top = 160.0
 offset_right = 88.0
-offset_bottom = 78.0
+offset_bottom = 211.0
 text = "Start Quest"
