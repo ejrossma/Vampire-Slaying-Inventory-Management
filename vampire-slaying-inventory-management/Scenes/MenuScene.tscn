@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dnl1gn0eu1tqq"]
 
 [ext_resource type="Texture2D" uid="uid://833mf7kfkkt4" path="res://Assets/Background.png" id="1_36iol"]
-[ext_resource type="Script" uid="uid://u2jkf8qego6a" path="res://Scenes/menu_scene.gd" id="1_xx56i"]
+[ext_resource type="Script" uid="uid://u2jkf8qego6a" path="res://Scripts/menu_scene.gd" id="1_xx56i"]
 
 [sub_resource type="FontVariation" id="FontVariation_3np7q"]
 
