@@ -1,0 +1,26 @@
+[
+ {
+   "ID": 1,
+   "Names": "Orlok",
+   "VampDifficulty": "",
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 2,
+   "Names": "Elizabeth Bathory",
+   "VampDifficulty": "",
+   "Lethality": true,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 3,
+   "Names": "Alucard",
+   "VampDifficulty": "",
+   "Lethality": true,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Str"
+ }
+]
