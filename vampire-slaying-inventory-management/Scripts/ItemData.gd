@@ -49,3 +49,6 @@ func _to_int(value) -> int:
 	if value == null:
 		return 0
 	return int(value)
+
+func get_item(id: int) -> Dictionary:
+	return itemData.get(id, {})
