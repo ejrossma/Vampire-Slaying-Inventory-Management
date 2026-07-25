@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://bgs6tnqettyok"]
 
-[ext_resource type="Script" uid="uid://i56kwtxyltpw" path="res://Scripts/quest.gd" id="1_c0djq"]
-[ext_resource type="Texture2D" uid="uid://513t7nefjkfg" path="res://Assets/Mission Popup.png" id="2_rbaau"]
-[ext_resource type="Texture2D" uid="uid://bny1boxdj5vme" path="res://Assets/Begin Mission Button.png" id="3_mt2c1"]
-[ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="4_jdmpj"]
+[ext_resource type="Script" uid="uid://i56kwtxyltpw" path="res://Scripts/quest.gd" id="1_pphu7"]
+[ext_resource type="Texture2D" uid="uid://513t7nefjkfg" path="res://Assets/Mission Popup.png" id="2_0cygo"]
+[ext_resource type="Texture2D" uid="uid://bny1boxdj5vme" path="res://Assets/Begin Mission Button.png" id="3_tefnd"]
+[ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="4_nbg2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6jhai"]
 size = Vector2(80, 83)
 
-[node name="Quest" type="Node2D" unique_id=1162786655 node_paths=PackedStringArray("duration", "waitTime")]
-script = ExtResource("1_c0djq")
+[node name="Mission" type="Node2D" unique_id=1162786655 node_paths=PackedStringArray("duration", "waitTime")]
+script = ExtResource("1_pphu7")
 duration = NodePath("Duration")
 waitTime = NodePath("WaitTime")
 
@@ -21,7 +21,7 @@ autostart = true
 [node name="MissionPopup" type="Sprite2D" parent="." unique_id=409862038]
 texture_filter = 1
 position = Vector2(50, 50)
-texture = ExtResource("2_rbaau")
+texture = ExtResource("2_0cygo")
 
 [node name="StartQuest" type="TextureButton" parent="MissionPopup" unique_id=1847936534]
 texture_filter = 1
@@ -29,11 +29,11 @@ offset_left = -22.0
 offset_top = 53.0
 offset_right = 28.0
 offset_bottom = 79.0
-texture_normal = ExtResource("3_mt2c1")
-texture_pressed = ExtResource("3_mt2c1")
-texture_hover = ExtResource("3_mt2c1")
-texture_disabled = ExtResource("3_mt2c1")
-texture_focused = ExtResource("3_mt2c1")
+texture_normal = ExtResource("3_tefnd")
+texture_pressed = ExtResource("3_tefnd")
+texture_hover = ExtResource("3_tefnd")
+texture_disabled = ExtResource("3_tefnd")
+texture_focused = ExtResource("3_tefnd")
 
 [node name="Label" type="Label" parent="MissionPopup/StartQuest" unique_id=1935768847]
 layout_mode = 0
@@ -41,7 +41,7 @@ offset_left = 10.0
 offset_top = 7.0
 offset_right = 42.0
 offset_bottom = 19.0
-theme_override_fonts/font = ExtResource("4_jdmpj")
+theme_override_fonts/font = ExtResource("4_nbg2v")
 theme_override_font_sizes/font_size = 12
 text = "Begin"
 
@@ -56,6 +56,29 @@ offset_right = -50.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MissionPopup/Control" unique_id=741402055]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mission Info" type="HBoxContainer" parent="MissionPopup/Control/VBoxContainer" unique_id=38038878]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MissionPopup/Control/VBoxContainer/Mission Info" unique_id=1468562886]
+layout_mode = 2
+
+[node name="Success Chance" type="HBoxContainer" parent="MissionPopup/Control/VBoxContainer" unique_id=597252529]
+layout_mode = 2
+
+[node name="Slayer Stats" type="HBoxContainer" parent="MissionPopup/Control/VBoxContainer" unique_id=873777461]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MissionPopup/Control/VBoxContainer" unique_id=1687621283]
+layout_mode = 2
 
 [node name="ItemSlots" type="Node2D" parent="." unique_id=681755084]
 visible = false
