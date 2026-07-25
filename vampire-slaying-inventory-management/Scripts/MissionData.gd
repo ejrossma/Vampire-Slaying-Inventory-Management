@@ -1,16 +1,16 @@
-class_name ItemData
+class_name MissionData
 extends Node
 
-static var _instance: ItemData
+static var _instance: MissionData
 
-static var instance: ItemData:
+static var instance: MissionData:
 	get:
 		if _instance == null:
-			_instance = ItemData.new()
+			_instance = MissionData.new()
 		return _instance
 
-var file_path : String = "res://Scripts/The Count is Down Equipment - Sheet1 (5).json"
-var itemData : Dictionary = {}
+var file_path : String = "res://Scripts/The Count is Down Missions - Sheet1 (1).json"
+var missionData : Dictionary = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,18 +32,17 @@ func load_json_file(file_path: String) -> void:
 		if typeof(entry) != TYPE_DICTIONARY:
 			continue
 		
-		var item_data := {
+		var mission_data := {
 			"ID": entry.get("ID", -1),
-			"Item": entry.get("Item", ""),
-			"StrStat": _to_int(entry.get("StrStat")),
-			"IntStat": _to_int(entry.get("IntStat")),
-			"AgiStat": _to_int(entry.get("AgiStat")),
-			"TotalEffectiveStats": _to_int(entry.get("TotalEffectiveStats")),
-			"Rarity": entry.get("Rarity", "Common")
+			"Name": entry.get("Name", ""),
+			"Difficulty": _to_int(entry.get("Difficulty")),
+			"Lethality": entry.get("Lethality"),
+			"PrimaryStat": entry.get("PrimaryStat"),
+			"SecondaryStat": entry.get("SecondaryStat")
 		}
 		
-		var id : int = item_data["ID"]
-		itemData[id] = item_data
+		var id : int = mission_data["ID"]
+		missionData[id] = mission_data
 
 func _to_int(value) -> int:
 	if value == null:
@@ -51,4 +50,4 @@ func _to_int(value) -> int:
 	return int(value)
 
 func get_item(id: int) -> Dictionary:
-	return itemData.get(id, {})
+	return missionData.get(id, {})

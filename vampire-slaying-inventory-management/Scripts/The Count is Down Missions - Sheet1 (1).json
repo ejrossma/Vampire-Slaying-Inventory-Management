@@ -1,0 +1,402 @@
+[
+ {
+   "ID": 1,
+   "Name": "Fix Wagon",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 2,
+   "Name": "Investigate Farm ",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 3,
+   "Name": "Track Footprints",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 4,
+   "Name": "Sweep Sidewalk",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Str"
+ },
+ {
+   "ID": 5,
+   "Name": "Feed Cats",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 6,
+   "Name": "Get Baptized",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Str"
+ },
+ {
+   "ID": 7,
+   "Name": "Study Rituals",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 8,
+   "Name": "Walk Granny's Dog",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Str"
+ },
+ {
+   "ID": 9,
+   "Name": "Nurse Sick Child",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 10,
+   "Name": "Cook for Shelter",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 11,
+   "Name": "Combat Training",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 12,
+   "Name": "Shop for Groceries",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 13,
+   "Name": "Repair Boots",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 14,
+   "Name": "Do Guild Laundry",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Str"
+ },
+ {
+   "ID": 15,
+   "Name": "Set Up Market Stand",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 16,
+   "Name": "Scout for Recruits",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 17,
+   "Name": "Go for a Jog",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Str"
+ },
+ {
+   "ID": 18,
+   "Name": "Play Chess",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 19,
+   "Name": "Take a Dance Class",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 20,
+   "Name": "Shift at Tavern",
+   "Difficulty": 0,
+   "Lethality": false,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 21,
+   "Name": "Spy on Outsiders",
+   "Difficulty": 1,
+   "Lethality": false,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 22,
+   "Name": "Herd Bulls",
+   "Difficulty": 1,
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 23,
+   "Name": "Adv. Combat Training",
+   "Difficulty": 1,
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 24,
+   "Name": "Adv.  Dance Class",
+   "Difficulty": 1,
+   "Lethality": false,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 25,
+   "Name": "Organize Ancient Text",
+   "Difficulty": 1,
+   "Lethality": false,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 26,
+   "Name": "Train Recruits",
+   "Difficulty": 1,
+   "Lethality": false,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 27,
+   "Name": "Capture Theives",
+   "Difficulty": 1,
+   "Lethality": true,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Str"
+ },
+ {
+   "ID": 28,
+   "Name": "Lead Congregation",
+   "Difficulty": 1,
+   "Lethality": false,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 29,
+   "Name": "Weapons Maintence",
+   "Difficulty": 1,
+   "Lethality": false,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 30,
+   "Name": "Help with Surgery",
+   "Difficulty": 1,
+   "Lethality": false,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 31,
+   "Name": "Princess Bodyguard",
+   "Difficulty": 1,
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 32,
+   "Name": "Investigate Corpse",
+   "Difficulty": 1,
+   "Lethality": false,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 33,
+   "Name": "Attend Secret Meeting",
+   "Difficulty": 1,
+   "Lethality": false,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 34,
+   "Name": "Practice Adv. Ritual",
+   "Difficulty": 1,
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 35,
+   "Name": "Study Dark Magic",
+   "Difficulty": 1,
+   "Lethality": true,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 36,
+   "Name": "Stop Bar Fight",
+   "Difficulty": 1,
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 37,
+   "Name": "Eavesdrop in Tavern",
+   "Difficulty": 1,
+   "Lethality": false,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 38,
+   "Name": "Clear out Cavern",
+   "Difficulty": 1,
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 39,
+   "Name": "Set up Scout Base",
+   "Difficulty": 1,
+   "Lethality": false,
+   "PrimaryStat": "Agi",
+   "SecondaryStat": "Str"
+ },
+ {
+   "ID": 40,
+   "Name": "Enforce Curfew",
+   "Difficulty": 1,
+   "Lethality": false,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 41,
+   "Name": "Fight Bandits",
+   "Difficulty": 2,
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 42,
+   "Name": "Rescue Princess",
+   "Difficulty": 2,
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 43,
+   "Name": "Investigate Lair",
+   "Difficulty": 2,
+   "Lethality": true,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 44,
+   "Name": "Kill Vampire Minions",
+   "Difficulty": 2,
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 45,
+   "Name": "Burn Witch",
+   "Difficulty": 2,
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 46,
+   "Name": "Slay Necromancer",
+   "Difficulty": 2,
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 47,
+   "Name": "Interogate Familiar",
+   "Difficulty": 2,
+   "Lethality": true,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 48,
+   "Name": "Subdue Minotaur",
+   "Difficulty": 2,
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Int"
+ },
+ {
+   "ID": 49,
+   "Name": "Track Dracula",
+   "Difficulty": 2,
+   "Lethality": true,
+   "PrimaryStat": "Int",
+   "SecondaryStat": "Agi"
+ },
+ {
+   "ID": 50,
+   "Name": "Quell Riot",
+   "Difficulty": 2,
+   "Lethality": true,
+   "PrimaryStat": "Str",
+   "SecondaryStat": "Agi"
+ }
+]
