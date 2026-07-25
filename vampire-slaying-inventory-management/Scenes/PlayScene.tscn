@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://ddnjjbokx1d14"]
 
+[ext_resource type="Texture2D" uid="uid://sx72baggnu61" path="res://Assets/Game Screen.png" id="1_6x5ix"]
+
 [node name="Node2D" type="Node2D" unique_id=809813158]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1584291336]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_6x5ix")
