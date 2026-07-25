@@ -5,8 +5,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Int",
-   "FIELD7": 9
+   "SecondaryStat": "Int"
  },
  {
    "ID": 2,
@@ -14,8 +13,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 17
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 3,
@@ -23,8 +21,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 16
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 4,
@@ -32,8 +29,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Agi",
-   "SecondaryStat": "Str",
-   "FIELD7": 14
+   "SecondaryStat": "Str"
  },
  {
    "ID": 5,
@@ -41,8 +37,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Agi",
-   "SecondaryStat": "Int",
-   "FIELD7": 9
+   "SecondaryStat": "Int"
  },
  {
    "ID": 6,
@@ -50,8 +45,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Str",
-   "FIELD7": 12
+   "SecondaryStat": "Str"
  },
  {
    "ID": 7,
@@ -59,8 +53,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 13
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 8,
@@ -68,8 +61,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Agi",
-   "SecondaryStat": "Str",
-   "FIELD7": 17
+   "SecondaryStat": "Str"
  },
  {
    "ID": 9,
@@ -77,8 +69,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 16
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 10,
@@ -86,8 +77,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Int",
-   "FIELD7": 16
+   "SecondaryStat": "Int"
  },
  {
    "ID": 11,
@@ -95,8 +85,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Int",
-   "FIELD7": 15
+   "SecondaryStat": "Int"
  },
  {
    "ID": 12,
@@ -104,8 +93,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Agi",
-   "SecondaryStat": "Int",
-   "FIELD7": 18
+   "SecondaryStat": "Int"
  },
  {
    "ID": 13,
@@ -113,8 +101,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Agi",
-   "FIELD7": 12
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 14,
@@ -122,8 +109,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Agi",
-   "SecondaryStat": "Str",
-   "FIELD7": 16
+   "SecondaryStat": "Str"
  },
  {
    "ID": 15,
@@ -131,8 +117,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Agi",
-   "FIELD7": 19
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 16,
@@ -140,8 +125,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 18
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 17,
@@ -149,8 +133,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Agi",
-   "SecondaryStat": "Str",
-   "FIELD7": 12
+   "SecondaryStat": "Str"
  },
  {
    "ID": 18,
@@ -158,8 +141,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 10
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 19,
@@ -167,8 +149,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Agi",
-   "SecondaryStat": "Int",
-   "FIELD7": 18
+   "SecondaryStat": "Int"
  },
  {
    "ID": 20,
@@ -176,8 +157,7 @@
    "Difficulty": 0,
    "Lethality": false,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Int",
-   "FIELD7": 15
+   "SecondaryStat": "Int"
  },
  {
    "ID": 21,
@@ -185,8 +165,7 @@
    "Difficulty": 1,
    "Lethality": false,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 16
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 22,
@@ -194,8 +173,7 @@
    "Difficulty": 1,
    "Lethality": true,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Agi",
-   "FIELD7": 10
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 23,
@@ -203,8 +181,7 @@
    "Difficulty": 1,
    "Lethality": true,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Agi",
-   "FIELD7": 20
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 24,
@@ -212,8 +189,7 @@
    "Difficulty": 1,
    "Lethality": false,
    "PrimaryStat": "Agi",
-   "SecondaryStat": "Int",
-   "FIELD7": 17
+   "SecondaryStat": "Int"
  },
  {
    "ID": 25,
@@ -221,8 +197,7 @@
    "Difficulty": 1,
    "Lethality": false,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 21
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 26,
@@ -230,8 +205,7 @@
    "Difficulty": 1,
    "Lethality": false,
    "PrimaryStat": "Agi",
-   "SecondaryStat": "Int",
-   "FIELD7": 14
+   "SecondaryStat": "Int"
  },
  {
    "ID": 27,
@@ -239,8 +213,7 @@
    "Difficulty": 1,
    "Lethality": true,
    "PrimaryStat": "Agi",
-   "SecondaryStat": "Str",
-   "FIELD7": 15
+   "SecondaryStat": "Str"
  },
  {
    "ID": 28,
@@ -248,8 +221,7 @@
    "Difficulty": 1,
    "Lethality": false,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 17
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 29,
@@ -257,8 +229,7 @@
    "Difficulty": 1,
    "Lethality": false,
    "PrimaryStat": "Agi",
-   "SecondaryStat": "Int",
-   "FIELD7": 17
+   "SecondaryStat": "Int"
  },
  {
    "ID": 30,
@@ -266,8 +237,7 @@
    "Difficulty": 1,
    "Lethality": false,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 17
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 31,
@@ -275,8 +245,7 @@
    "Difficulty": 1,
    "Lethality": true,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Int",
-   "FIELD7": 18
+   "SecondaryStat": "Int"
  },
  {
    "ID": 32,
@@ -284,8 +253,7 @@
    "Difficulty": 1,
    "Lethality": false,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 18
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 33,
@@ -293,8 +261,7 @@
    "Difficulty": 1,
    "Lethality": false,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 21
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 34,
@@ -302,8 +269,7 @@
    "Difficulty": 1,
    "Lethality": true,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Int",
-   "FIELD7": 20
+   "SecondaryStat": "Int"
  },
  {
    "ID": 35,
@@ -311,8 +277,7 @@
    "Difficulty": 1,
    "Lethality": true,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 16
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 36,
@@ -320,8 +285,7 @@
    "Difficulty": 1,
    "Lethality": true,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Agi",
-   "FIELD7": 14
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 37,
@@ -329,8 +293,7 @@
    "Difficulty": 1,
    "Lethality": false,
    "PrimaryStat": "Agi",
-   "SecondaryStat": "Int",
-   "FIELD7": 19
+   "SecondaryStat": "Int"
  },
  {
    "ID": 38,
@@ -338,8 +301,7 @@
    "Difficulty": 1,
    "Lethality": true,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Agi",
-   "FIELD7": 16
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 39,
@@ -347,8 +309,7 @@
    "Difficulty": 1,
    "Lethality": false,
    "PrimaryStat": "Agi",
-   "SecondaryStat": "Str",
-   "FIELD7": 17
+   "SecondaryStat": "Str"
  },
  {
    "ID": 40,
@@ -356,8 +317,7 @@
    "Difficulty": 1,
    "Lethality": false,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Agi",
-   "FIELD7": 14
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 41,
@@ -365,8 +325,7 @@
    "Difficulty": 2,
    "Lethality": true,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Agi",
-   "FIELD7": 13
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 42,
@@ -374,8 +333,7 @@
    "Difficulty": 2,
    "Lethality": true,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Int",
-   "FIELD7": 15
+   "SecondaryStat": "Int"
  },
  {
    "ID": 43,
@@ -383,8 +341,7 @@
    "Difficulty": 2,
    "Lethality": true,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 16
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 44,
@@ -392,8 +349,7 @@
    "Difficulty": 2,
    "Lethality": true,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Agi",
-   "FIELD7": 20
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 45,
@@ -401,8 +357,7 @@
    "Difficulty": 2,
    "Lethality": true,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Int",
-   "FIELD7": 10
+   "SecondaryStat": "Int"
  },
  {
    "ID": 46,
@@ -410,8 +365,7 @@
    "Difficulty": 2,
    "Lethality": true,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Agi",
-   "FIELD7": 16
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 47,
@@ -419,8 +373,7 @@
    "Difficulty": 2,
    "Lethality": true,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 19
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 48,
@@ -428,8 +381,7 @@
    "Difficulty": 2,
    "Lethality": true,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Int",
-   "FIELD7": 15
+   "SecondaryStat": "Int"
  },
  {
    "ID": 49,
@@ -437,8 +389,7 @@
    "Difficulty": 2,
    "Lethality": true,
    "PrimaryStat": "Int",
-   "SecondaryStat": "Agi",
-   "FIELD7": 13
+   "SecondaryStat": "Agi"
  },
  {
    "ID": 50,
@@ -446,7 +397,6 @@
    "Difficulty": 2,
    "Lethality": true,
    "PrimaryStat": "Str",
-   "SecondaryStat": "Agi",
-   "FIELD7": 10
+   "SecondaryStat": "Agi"
  }
 ]
