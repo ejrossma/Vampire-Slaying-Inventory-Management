@@ -1,0 +1,200 @@
+[
+ {
+   "ID": null,
+   "Item": "",
+   "StrStat": null,
+   "IntStat": null,
+   "AgiStat": null,
+   "TotalEffectiveStats": null,
+   "Rarity": ""
+ },
+ {
+   "ID": 1,
+   "Item": "Stake",
+   "StrStat": 1,
+   "IntStat": null,
+   "AgiStat": 1,
+   "TotalEffectiveStats": 2,
+   "Rarity": "Common"
+ },
+ {
+   "ID": 2,
+   "Item": "SwordBronze",
+   "StrStat": 2,
+   "IntStat": null,
+   "AgiStat": null,
+   "TotalEffectiveStats": 2,
+   "Rarity": "Common"
+ },
+ {
+   "ID": 3,
+   "Item": "SwordSilver",
+   "StrStat": 4,
+   "IntStat": null,
+   "AgiStat": null,
+   "TotalEffectiveStats": 4,
+   "Rarity": "Uncommon"
+ },
+ {
+   "ID": 4,
+   "Item": "SwordHellstone",
+   "StrStat": 6,
+   "IntStat": 1,
+   "AgiStat": 1,
+   "TotalEffectiveStats": 8,
+   "Rarity": "Rare"
+ },
+ {
+   "ID": 5,
+   "Item": "ChainWhipIron",
+   "StrStat": 4,
+   "IntStat": -2,
+   "AgiStat": null,
+   "TotalEffectiveStats": 2,
+   "Rarity": "Common"
+ },
+ {
+   "ID": 6,
+   "Item": "ChainWhipBlessed",
+   "StrStat": 4,
+   "IntStat": 2,
+   "AgiStat": null,
+   "TotalEffectiveStats": 6,
+   "Rarity": "Rare"
+ },
+ {
+   "ID": 7,
+   "Item": "RevolverIron",
+   "StrStat": 2,
+   "IntStat": null,
+   "AgiStat": 3,
+   "TotalEffectiveStats": 5,
+   "Rarity": "Uncommon"
+ },
+ {
+   "ID": 8,
+   "Item": "RevolverSilver",
+   "StrStat": 5,
+   "IntStat": null,
+   "AgiStat": 3,
+   "TotalEffectiveStats": 8,
+   "Rarity": "Rare"
+ },
+ {
+   "ID": null,
+   "Item": "",
+   "StrStat": null,
+   "IntStat": null,
+   "AgiStat": null,
+   "TotalEffectiveStats": null,
+   "Rarity": ""
+ },
+ {
+   "ID": 9,
+   "Item": "RosaryWooden",
+   "StrStat": 0,
+   "IntStat": 0,
+   "AgiStat": 1,
+   "TotalEffectiveStats": 1,
+   "Rarity": "Common"
+ },
+ {
+   "ID": 10,
+   "Item": "RosarySilver",
+   "StrStat": 0,
+   "IntStat": 0,
+   "AgiStat": 2,
+   "TotalEffectiveStats": 2,
+   "Rarity": "Uncommon"
+ },
+ {
+   "ID": 11,
+   "Item": "RosaryBlessed",
+   "StrStat": 0,
+   "IntStat": 1,
+   "AgiStat": 3,
+   "TotalEffectiveStats": 4,
+   "Rarity": "Rare"
+ },
+ {
+   "ID": 12,
+   "Item": "GarlicSingle",
+   "StrStat": 0,
+   "IntStat": 1,
+   "AgiStat": 0,
+   "TotalEffectiveStats": 1,
+   "Rarity": "Common"
+ },
+ {
+   "ID": 13,
+   "Item": "GarlicNecklace",
+   "StrStat": 0,
+   "IntStat": 2,
+   "AgiStat": 0,
+   "TotalEffectiveStats": 2,
+   "Rarity": "Uncommon"
+ },
+ {
+   "ID": 14,
+   "Item": "GarlicSash",
+   "StrStat": 0,
+   "IntStat": 3,
+   "AgiStat": 0,
+   "TotalEffectiveStats": 3,
+   "Rarity": "Rare"
+ },
+ {
+   "ID": 15,
+   "Item": "PendantofFlame",
+   "StrStat": 5,
+   "IntStat": 2,
+   "AgiStat": -1,
+   "TotalEffectiveStats": 6,
+   "Rarity": "Rare"
+ },
+ {
+   "ID": 16,
+   "Item": "AncientText",
+   "StrStat": 0,
+   "IntStat": 5,
+   "AgiStat": -1,
+   "TotalEffectiveStats": 4,
+   "Rarity": "Uncommon"
+ },
+ {
+   "ID": null,
+   "Item": "",
+   "StrStat": null,
+   "IntStat": null,
+   "AgiStat": null,
+   "TotalEffectiveStats": null,
+   "Rarity": ""
+ },
+ {
+   "ID": 17,
+   "Item": "DrifterOutfit",
+   "StrStat": 0,
+   "IntStat": 0,
+   "AgiStat": 2,
+   "TotalEffectiveStats": 2,
+   "Rarity": "Common"
+ },
+ {
+   "ID": 18,
+   "Item": "CrusaderArmor",
+   "StrStat": 5,
+   "IntStat": 0,
+   "AgiStat": -2,
+   "TotalEffectiveStats": 3,
+   "Rarity": "Rare"
+ },
+ {
+   "ID": 19,
+   "Item": "MythicalVampireSlayerCoat",
+   "StrStat": 4,
+   "IntStat": 3,
+   "AgiStat": 3,
+   "TotalEffectiveStats": 10,
+   "Rarity": "Mythic"
+ }
+]
