@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bgs6tnqettyok"]
+
+[ext_resource type="Script" uid="uid://i56kwtxyltpw" path="res://Scenes/GameplayObjects/quest.gd" id="1_c0djq"]
+
+[node name="Quest" type="Node2D" unique_id=1162786655 node_paths=PackedStringArray("duration", "waitTime")]
+script = ExtResource("1_c0djq")
+duration = NodePath("Duration")
+waitTime = NodePath("WaitTime")
+
+[node name="Duration" type="Timer" parent="." unique_id=208214877]
+
+[node name="WaitTime" type="Timer" parent="." unique_id=259734078]
+autostart = true
+
+[node name="StartQuest" type="Button" parent="." unique_id=990752384]
+offset_left = -87.0
+offset_top = 27.0
+offset_right = 88.0
+offset_bottom = 78.0
+text = "Start Quest"
