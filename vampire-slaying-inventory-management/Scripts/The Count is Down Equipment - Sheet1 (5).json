@@ -1,14 +1,5 @@
 [
  {
-   "ID": null,
-   "Item": "",
-   "StrStat": null,
-   "IntStat": null,
-   "AgiStat": null,
-   "TotalEffectiveStats": null,
-   "Rarity": ""
- },
- {
    "ID": 1,
    "Item": "Stake",
    "StrStat": 1,
@@ -79,15 +70,6 @@
    "AgiStat": 3,
    "TotalEffectiveStats": 8,
    "Rarity": "Rare"
- },
- {
-   "ID": null,
-   "Item": "",
-   "StrStat": null,
-   "IntStat": null,
-   "AgiStat": null,
-   "TotalEffectiveStats": null,
-   "Rarity": ""
  },
  {
    "ID": 9,
@@ -161,15 +143,7 @@
    "TotalEffectiveStats": 4,
    "Rarity": "Uncommon"
  },
- {
-   "ID": null,
-   "Item": "",
-   "StrStat": null,
-   "IntStat": null,
-   "AgiStat": null,
-   "TotalEffectiveStats": null,
-   "Rarity": ""
- },
+ 
  {
    "ID": 17,
    "Item": "DrifterOutfit",
