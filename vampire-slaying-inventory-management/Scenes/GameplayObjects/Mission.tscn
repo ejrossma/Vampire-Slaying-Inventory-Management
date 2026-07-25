@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgs6tnqettyok"]
 
-[ext_resource type="Script" uid="uid://i56kwtxyltpw" path="res://Scripts/mission.gd" id="1_pphu7"]
+[ext_resource type="Script" uid="uid://ct3x3hnadrh4f" path="res://Scripts/Mission.gd" id="1_pphu7"]
 [ext_resource type="Texture2D" uid="uid://513t7nefjkfg" path="res://Assets/Mission Popup.png" id="2_0cygo"]
 [ext_resource type="Texture2D" uid="uid://bny1boxdj5vme" path="res://Assets/Begin Mission Button.png" id="3_tefnd"]
 [ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="4_nbg2v"]

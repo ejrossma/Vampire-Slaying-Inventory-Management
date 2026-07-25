@@ -1,9 +1,11 @@
-class_name quest
+class_name mission
 extends Node2D
 
 enum Types { None, STRENGTH, AGILITY, INTELLIGENCE }
+enum Difficulty { Easy, Medium, Hard }
 
 @export var favoredType : Types
+@export var difficulty : Difficulty
 @export var favoredTypeMult : int
 @export var secondaryType : Types
 @export var secondaryTypeMult : int
@@ -11,14 +13,16 @@ enum Types { None, STRENGTH, AGILITY, INTELLIGENCE }
 @export var waitTime : Timer
 @export var successThreshold : int
 
-var assignedCharacter : Adventurer
+var assignedCharacter : slayer
 var assignedItems := []
 
 var cardsRewarded : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	waitTime.wait_time = 15.0
 	waitTime.timeout.connect(questExpired)
+	duration.wait_time = randf_range(5, 20)
 	duration.time.connect(calculateSuccess)
 	$StartQuest.pressed.connect(startQuest)
 
