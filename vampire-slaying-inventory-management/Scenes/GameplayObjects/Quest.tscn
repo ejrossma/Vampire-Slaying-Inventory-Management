@@ -13,87 +13,29 @@ script = ExtResource("1_c0djq")
 duration = NodePath("Duration")
 waitTime = NodePath("WaitTime")
 
-[node name="QuestBox" type="ColorRect" parent="." unique_id=1411788852]
-offset_left = -183.0
-offset_top = -228.0
-offset_right = 185.0
-offset_bottom = 229.0
-
-[node name="CharacterSlotSprite" type="ColorRect" parent="QuestBox" unique_id=629543486]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 24.0
-offset_right = 320.0
-offset_bottom = 183.0
-color = Color(0.4333519, 0.4333519, 0.4333519, 1)
-
-[node name="ItemSlots" type="Node2D" parent="QuestBox" unique_id=681755084]
-
-[node name="Slot1" type="ColorRect" parent="QuestBox/ItemSlots" unique_id=1564982938]
-offset_left = 28.0
-offset_top = 228.0
-offset_right = 109.0
-offset_bottom = 311.0
-color = Color(0.4149491, 0.4149491, 0.4149491, 1)
-
-[node name="Area2D" type="Area2D" parent="QuestBox/ItemSlots/Slot1" unique_id=102339769]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="QuestBox/ItemSlots/Slot1/Area2D" unique_id=1778419715]
-position = Vector2(41, 41.5)
-shape = SubResource("RectangleShape2D_6jhai")
-
-[node name="Slot2" type="ColorRect" parent="QuestBox/ItemSlots" unique_id=854175031]
-offset_left = 143.0
-offset_top = 227.0
-offset_right = 224.0
-offset_bottom = 310.0
-color = Color(0.4149491, 0.4149491, 0.4149491, 1)
-
-[node name="Area2D" type="Area2D" parent="QuestBox/ItemSlots/Slot2" unique_id=275514005]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="QuestBox/ItemSlots/Slot2/Area2D" unique_id=401398018]
-position = Vector2(41, 41.5)
-shape = SubResource("RectangleShape2D_6jhai")
-
-[node name="Slot3" type="ColorRect" parent="QuestBox/ItemSlots" unique_id=636324258]
-offset_left = 257.0
-offset_top = 226.0
-offset_right = 338.0
-offset_bottom = 309.0
-color = Color(0.4149491, 0.4149491, 0.4149491, 1)
-
-[node name="Area2D" type="Area2D" parent="QuestBox/ItemSlots/Slot3" unique_id=1548458396]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="QuestBox/ItemSlots/Slot3/Area2D" unique_id=798399375]
-position = Vector2(41, 41.5)
-shape = SubResource("RectangleShape2D_6jhai")
-
 [node name="Duration" type="Timer" parent="." unique_id=208214877]
 
 [node name="WaitTime" type="Timer" parent="." unique_id=259734078]
 autostart = true
-
-[node name="StartQuest" type="Button" parent="." unique_id=990752384]
-offset_left = 24.0
-offset_top = -35.0
-offset_right = 76.0
-offset_bottom = -4.0
-text = "Begin"
 
 [node name="MissionPopup" type="Sprite2D" parent="." unique_id=409862038]
 texture_filter = 1
 position = Vector2(50, 50)
 texture = ExtResource("2_rbaau")
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1847936534]
+[node name="StartQuest" type="TextureButton" parent="MissionPopup" unique_id=1847936534]
 texture_filter = 1
-offset_left = 28.0
-offset_top = 103.0
-offset_right = 78.0
-offset_bottom = 129.0
+offset_left = -22.0
+offset_top = 53.0
+offset_right = 28.0
+offset_bottom = 79.0
 texture_normal = ExtResource("3_mt2c1")
+texture_pressed = ExtResource("3_mt2c1")
+texture_hover = ExtResource("3_mt2c1")
+texture_disabled = ExtResource("3_mt2c1")
+texture_focused = ExtResource("3_mt2c1")
 
-[node name="Label" type="Label" parent="TextureButton" unique_id=1935768847]
+[node name="Label" type="Label" parent="MissionPopup/StartQuest" unique_id=1935768847]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 7.0
@@ -102,3 +44,66 @@ offset_bottom = 19.0
 theme_override_fonts/font = ExtResource("4_jdmpj")
 theme_override_font_sizes/font_size = 12
 text = "Begin"
+
+[node name="Control" type="Control" parent="MissionPopup" unique_id=168308549]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemSlots" type="Node2D" parent="." unique_id=681755084]
+visible = false
+position = Vector2(-183, -228)
+
+[node name="Slot1" type="ColorRect" parent="ItemSlots" unique_id=1564982938]
+offset_left = 28.0
+offset_top = 228.0
+offset_right = 109.0
+offset_bottom = 311.0
+color = Color(0.4149491, 0.4149491, 0.4149491, 1)
+
+[node name="Area2D" type="Area2D" parent="ItemSlots/Slot1" unique_id=102339769]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemSlots/Slot1/Area2D" unique_id=1778419715]
+position = Vector2(41, 41.5)
+shape = SubResource("RectangleShape2D_6jhai")
+
+[node name="Slot2" type="ColorRect" parent="ItemSlots" unique_id=854175031]
+offset_left = 143.0
+offset_top = 227.0
+offset_right = 224.0
+offset_bottom = 310.0
+color = Color(0.4149491, 0.4149491, 0.4149491, 1)
+
+[node name="Area2D" type="Area2D" parent="ItemSlots/Slot2" unique_id=275514005]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemSlots/Slot2/Area2D" unique_id=401398018]
+position = Vector2(41, 41.5)
+shape = SubResource("RectangleShape2D_6jhai")
+
+[node name="Slot3" type="ColorRect" parent="ItemSlots" unique_id=636324258]
+offset_left = 257.0
+offset_top = 226.0
+offset_right = 338.0
+offset_bottom = 309.0
+color = Color(0.4149491, 0.4149491, 0.4149491, 1)
+
+[node name="Area2D" type="Area2D" parent="ItemSlots/Slot3" unique_id=1548458396]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemSlots/Slot3/Area2D" unique_id=798399375]
+position = Vector2(41, 41.5)
+shape = SubResource("RectangleShape2D_6jhai")
+
+[node name="CharacterSlotSprite" type="ColorRect" parent="." unique_id=629543486]
+visible = false
+offset_left = -136.0
+offset_top = -204.0
+offset_right = 137.0
+offset_bottom = -45.0
+color = Color(0.4333519, 0.4333519, 0.4333519, 1)

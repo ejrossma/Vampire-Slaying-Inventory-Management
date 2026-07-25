@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dnl1gn0eu1tqq"]
 
-[ext_resource type="Texture2D" uid="uid://833mf7kfkkt4" path="res://Assets/Background.png" id="1_36iol"]
 [ext_resource type="Script" uid="uid://u2jkf8qego6a" path="res://Scripts/menu_scene.gd" id="1_xx56i"]
+[ext_resource type="Texture2D" uid="uid://cgluw8ldygvjp" path="res://Assets/Background Try Two.png" id="2_xx56i"]
 
 [sub_resource type="FontVariation" id="FontVariation_3np7q"]
 
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_36iol")
+texture = ExtResource("2_xx56i")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect" unique_id=1229402361]
 layout_mode = 1
