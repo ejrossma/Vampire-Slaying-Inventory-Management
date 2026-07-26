@@ -1,11 +1,42 @@
 [gd_scene format=3 uid="uid://ddnjjbokx1d14"]
 
 [ext_resource type="Texture2D" uid="uid://sx72baggnu61" path="res://Assets/Game Screen.png" id="1_6x5ix"]
+[ext_resource type="Script" uid="uid://du61n8tryl7td" path="res://Scripts/gameManager.gd" id="1_7vjhc"]
+[ext_resource type="PackedScene" uid="uid://bgs6tnqettyok" path="res://Scenes/GameplayObjects/Mission.tscn" id="2_353r0"]
+[ext_resource type="Script" uid="uid://beyf5lapqkpyb" path="res://Scripts/ItemData.gd" id="3_353r0"]
+[ext_resource type="Script" uid="uid://1uc8wx13qrlj" path="res://Scripts/MissionData.gd" id="4_pd2lr"]
 
-[node name="Node2D" type="Node2D" unique_id=809813158]
+[node name="Node2D" type="Node2D" unique_id=809813158 node_paths=PackedStringArray("mission_parent", "FinalCountdown", "spawnInterval", "missionData", "itemData")]
+script = ExtResource("1_7vjhc")
+mission_scene = ExtResource("2_353r0")
+mission_parent = NodePath("Missions")
+FinalCountdown = NodePath("DraculaTimer")
+spawnInterval = NodePath("SpawnTimer")
+missionData = NodePath("MissionData")
+itemData = NodePath("ItemData")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1584291336]
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_6x5ix")
+
+[node name="ItemData" type="Node" parent="." unique_id=2121529517]
+script = ExtResource("3_353r0")
+
+[node name="MissionData" type="Node" parent="." unique_id=101200361]
+script = ExtResource("4_pd2lr")
+
+[node name="VampireTimer" type="Timer" parent="." unique_id=1919686918]
+wait_time = 60.0
+autostart = true
+
+[node name="DraculaTimer" type="Timer" parent="." unique_id=1927742995]
+wait_time = 300.0
+autostart = true
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1485172423]
+wait_time = 5.0
+autostart = true
+
+[node name="Missions" type="Node" parent="." unique_id=102419144]
