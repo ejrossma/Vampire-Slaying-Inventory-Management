@@ -2,6 +2,14 @@
 
 [ext_resource type="Script" uid="uid://34vsrfutf4mu" path="res://audio_manager.gd" id="1_bq1v2"]
 [ext_resource type="AudioStream" uid="uid://b3k5384bjmwre" path="res://Assets/Sounds/MainMenuMusic.wav" id="2_6jj5d"]
+[ext_resource type="AudioStream" uid="uid://c4gysfmp3b0e4" path="res://Assets/Sounds/UISelect.wav" id="3_5olve"]
+[ext_resource type="AudioStream" uid="uid://qayubv2e85lm" path="res://Assets/Sounds/MissionFail.wav" id="4_nhx87"]
+[ext_resource type="AudioStream" uid="uid://ckgk2qcvxgj0r" path="res://Assets/Sounds/EclipseMusic.wav" id="5_l2k84"]
+[ext_resource type="AudioStream" uid="uid://duoc4ewrwu8a0" path="res://Assets/Sounds/PickUp.wav" id="5_v0gdi"]
+[ext_resource type="AudioStream" uid="uid://cs6lehykaviwb" path="res://Assets/Sounds/Drop.wav" id="6_7fh0q"]
+[ext_resource type="AudioStream" uid="uid://bw3l5d4yck8sg" path="res://Assets/Sounds/DraculaReveal.wav" id="6_l55mp"]
+[ext_resource type="AudioStream" uid="uid://bw0hf3atmx8os" path="res://Assets/Sounds/GameOver.wav" id="9_op7ad"]
+[ext_resource type="AudioStream" uid="uid://81qo33s3p5k3" path="res://Assets/Sounds/GameWin.wav" id="10_wby2p"]
 
 [node name="AudioManager" type="Node2D" unique_id=894838505]
 script = ExtResource("1_bq1v2")
@@ -10,7 +18,27 @@ script = ExtResource("1_bq1v2")
 stream = ExtResource("2_6jj5d")
 
 [node name="UiSelect" type="AudioStreamPlayer" parent="." unique_id=1147337887]
+stream = ExtResource("3_5olve")
 
 [node name="MissionFail" type="AudioStreamPlayer" parent="." unique_id=2109324715]
+stream = ExtResource("4_nhx87")
+volume_db = -68.66
+pitch_scale = 0.31
 
-[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="." unique_id=1332589647]
+[node name="PickUp" type="AudioStreamPlayer" parent="." unique_id=1332589647]
+stream = ExtResource("5_v0gdi")
+
+[node name="Drop" type="AudioStreamPlayer" parent="." unique_id=1971142119]
+stream = ExtResource("6_7fh0q")
+
+[node name="EclipseMusic" type="AudioStreamPlayer" parent="." unique_id=1193064786]
+stream = ExtResource("5_l2k84")
+
+[node name="DraculaReveal" type="AudioStreamPlayer" parent="." unique_id=1408620920]
+stream = ExtResource("6_l55mp")
+
+[node name="GameOver" type="AudioStreamPlayer" parent="." unique_id=2062482493]
+stream = ExtResource("9_op7ad")
+
+[node name="GameWin" type="AudioStreamPlayer" parent="." unique_id=1687168036]
+stream = ExtResource("10_wby2p")
