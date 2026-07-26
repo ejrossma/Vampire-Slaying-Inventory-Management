@@ -1,14 +1,14 @@
 class_name RewardMenu
 extends Node2D
 
-@onready var slot_1: ColorRect = $ColorRect/Slot1
-@onready var slot_2: ColorRect = $ColorRect/Slot2
-@onready var slot_3: ColorRect = $ColorRect/Slot3
+@export var slot_1: TextureRect
+@export var slot_2: TextureRect
+@export var slot_3: TextureRect
 
 @export var rewards := []
-@onready var button_1: TextureButton = $ColorRect/Slot1/Button1
-@onready var button_2: TextureButton = $ColorRect/Slot2/Button2
-@onready var button_3: TextureButton = $ColorRect/Slot3/Button3
+@export var button_1: Button
+@export var button_2: Button
+@export var button_3: Button
 
 
 # Called when the node enters the scene tree for the first time.

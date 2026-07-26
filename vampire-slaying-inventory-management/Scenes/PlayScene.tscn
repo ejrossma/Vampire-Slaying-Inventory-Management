@@ -43,6 +43,8 @@
 [ext_resource type="Texture2D" uid="uid://b8ly7cddn3alk" path="res://Assets/Items/UltimateVampireSlayerJacket.png" id="38_ruxjk"]
 [ext_resource type="PackedScene" uid="uid://b8i557r4rnscl" path="res://Scenes/TimerBar.tscn" id="42_ic4nc"]
 [ext_resource type="Script" uid="uid://v2lgywqt5hem" path="res://Scripts/RewardMenu.gd" id="43_7jdiu"]
+[ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="44_dqsny"]
+[ext_resource type="Texture2D" uid="uid://bew6p8ub4lgnd" path="res://Assets/card.png" id="44_x53aa"]
 
 [node name="Node2D" type="Node2D" unique_id=809813158 node_paths=PackedStringArray("slayerSlots", "inventorySlots", "card_reward_parent", "mission_parent", "FinalCountdown", "spawnInterval", "missionData", "itemData")]
 script = ExtResource("1_7vjhc")
@@ -149,97 +151,107 @@ position = Vector2(1198, 561)
 [node name="TimerBar" parent="." unique_id=1062800178 instance=ExtResource("42_ic4nc")]
 position = Vector2(190, 6)
 
-[node name="RewardMenu" type="Node2D" parent="." unique_id=2076163826]
-position = Vector2(368, 159)
+[node name="RewardMenu2" type="ColorRect" parent="." unique_id=1141423970]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.28627452, 0.28627452, 0.28627452, 0.78431374)
 script = ExtResource("43_7jdiu")
 
-[node name="ColorRect" type="ColorRect" parent="RewardMenu" unique_id=909379907]
-offset_left = 61.0
-offset_top = -43.0
-offset_right = 101.0
-offset_bottom = -3.0
-scale = Vector2(12.101516, 7.2878914)
-
-[node name="Slot1" type="ColorRect" parent="RewardMenu/ColorRect" unique_id=1990157493]
+[node name="ColorRect" type="ColorRect" parent="RewardMenu2" unique_id=909379907]
 layout_mode = 0
-offset_left = 2.3963943
-offset_top = 7.272337
-offset_right = 42.396393
-offset_bottom = 47.27234
-scale = Vector2(0.23121238, 0.5369748)
-color = Color(0.8666667, 1, 0.54901963, 1)
+offset_left = 420.0
+offset_top = 162.0
+offset_right = 870.0
+offset_bottom = 412.0
+color = Color(0.6039216, 0.3882353, 0.28627452, 1)
 
-[node name="Label" type="Label" parent="RewardMenu/ColorRect/Slot1" unique_id=494691353]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 6.4331207
-offset_top = 42.41821
-offset_right = 52.43312
-offset_bottom = 65.41821
-scale = Vector2(0.57097185, 0.30089533)
-text = "Select"
+[node name="Slot1" type="TextureRect" parent="RewardMenu2/ColorRect" unique_id=909950467]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = -81.0
+offset_right = 87.0
+offset_bottom = -17.0
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("44_x53aa")
 
-[node name="Button1" type="TextureButton" parent="RewardMenu/ColorRect/Slot1" unique_id=200696227]
+[node name="Button" type="Button" parent="RewardMenu2/ColorRect/Slot1" unique_id=1769996779]
 layout_mode = 0
-offset_left = 0.7147912
-offset_top = 40.629486
-offset_right = 40.71479
-offset_bottom = 80.1245
-scale = Vector2(0.89581233, 0.2469595)
-ignore_texture_size = true
+offset_left = -2.5
+offset_top = 69.0
+offset_right = 71.5
+offset_bottom = 93.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("44_dqsny")
+text = " Choose "
 
-[node name="Slot2" type="ColorRect" parent="RewardMenu/ColorRect" unique_id=273923392]
-layout_mode = 0
-offset_left = 15.122074
-offset_top = 7.272337
-offset_right = 55.122074
-offset_bottom = 47.27234
-scale = Vector2(0.23121238, 0.5369748)
-color = Color(0.8666667, 1, 0.54901963, 1)
+[node name="Slot2" type="TextureRect" parent="RewardMenu2/ColorRect" unique_id=305307185]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -81.0
+offset_right = -2.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("44_x53aa")
 
-[node name="Label" type="Label" parent="RewardMenu/ColorRect/Slot2" unique_id=218542048]
-modulate = Color(0, 0, 0, 1)
+[node name="Button2" type="Button" parent="RewardMenu2/ColorRect/Slot2" unique_id=595041869]
 layout_mode = 0
-offset_left = 6.4331055
-offset_top = 42.41821
-offset_right = 52.433105
-offset_bottom = 65.41821
-scale = Vector2(0.57097185, 0.30089533)
-text = "Select"
+offset_left = -2.5
+offset_top = 69.0
+offset_right = 71.5
+offset_bottom = 93.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("44_dqsny")
+text = " Choose "
 
-[node name="Button2" type="TextureButton" parent="RewardMenu/ColorRect/Slot2" unique_id=2033253342]
-layout_mode = 0
-offset_left = 1.4295822
-offset_top = 40.629486
-offset_right = 41.42958
-offset_bottom = 80.1245
-scale = Vector2(0.89581233, 0.2469595)
-ignore_texture_size = true
+[node name="Slot3" type="TextureRect" parent="RewardMenu2/ColorRect" unique_id=1645511730]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -81.0
+offset_right = -85.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("44_x53aa")
 
-[node name="Slot3" type="ColorRect" parent="RewardMenu/ColorRect" unique_id=1250713627]
+[node name="Button3" type="Button" parent="RewardMenu2/ColorRect/Slot3" unique_id=1866515541]
 layout_mode = 0
-offset_left = 27.930386
-offset_top = 7.1351233
-offset_right = 67.93039
-offset_bottom = 47.135124
-scale = Vector2(0.23121238, 0.5369748)
-color = Color(0.8666667, 1, 0.54901963, 1)
+offset_left = -2.5
+offset_top = 69.0
+offset_right = 71.5
+offset_bottom = 93.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("44_dqsny")
+text = " Choose "
 
-[node name="Label" type="Label" parent="RewardMenu/ColorRect/Slot3" unique_id=516080791]
-modulate = Color(0, 0, 0, 1)
+[node name="Label" type="Label" parent="RewardMenu2/ColorRect" unique_id=1871597918]
 layout_mode = 0
-offset_left = 6.4331055
-offset_top = 42.41821
-offset_right = 52.433105
-offset_bottom = 65.41821
-scale = Vector2(0.57097185, 0.30089533)
-text = "Select"
-
-[node name="Button3" type="TextureButton" parent="RewardMenu/ColorRect/Slot3" unique_id=747542703]
-layout_mode = 0
-offset_left = 2.501769
-offset_top = 40.629486
-offset_right = 42.50177
-offset_bottom = 80.1245
-scale = Vector2(0.89581233, 0.2469595)
-ignore_texture_size = true
+offset_left = 124.0
+offset_top = 9.0
+offset_right = 323.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("44_dqsny")
+theme_override_font_sizes/font_size = 25
+text = "Mission Success"
+horizontal_alignment = 1
+vertical_alignment = 1
