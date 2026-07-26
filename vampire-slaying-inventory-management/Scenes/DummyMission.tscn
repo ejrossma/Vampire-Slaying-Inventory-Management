@@ -1,0 +1,258 @@
+[gd_scene format=3 uid="uid://cn0ou48867okd"]
+
+[ext_resource type="Texture2D" uid="uid://513t7nefjkfg" path="res://Assets/Mission Popup.png" id="1_lhkb3"]
+[ext_resource type="Texture2D" uid="uid://bny1boxdj5vme" path="res://Assets/Begin Mission Button.png" id="2_btsnd"]
+[ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="3_g7moo"]
+[ext_resource type="Texture2D" uid="uid://cs2q6xprc2prq" path="res://Assets/Mission Popup Slot.png" id="4_b6tgf"]
+[ext_resource type="Texture2D" uid="uid://dds3tnrerg2dn" path="res://Assets/Mission Popup Slayer.png" id="5_fcjpd"]
+[ext_resource type="Texture2D" uid="uid://3jyggfed3n47" path="res://Assets/Mission Popup Slayer Stats.png" id="6_57beb"]
+[ext_resource type="Texture2D" uid="uid://ckdusbl6rshch" path="res://Assets/Primary Indicator.png" id="7_nvh1a"]
+[ext_resource type="Texture2D" uid="uid://bk4mj4psphukf" path="res://Assets/Secondary Indicator.png" id="8_c2aw7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjgw8"]
+size = Vector2(22, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lpcb"]
+size = Vector2(22, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvo3c"]
+size = Vector2(22, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxcsa"]
+size = Vector2(29, 61)
+
+[node name="DummyMission" type="Node2D" unique_id=470641353]
+
+[node name="MissionPopup" type="Sprite2D" parent="." unique_id=1593914365]
+texture_filter = 1
+position = Vector2(50, 50)
+texture = ExtResource("1_lhkb3")
+
+[node name="StartQuest" type="TextureButton" parent="MissionPopup" unique_id=1785971872]
+texture_filter = 1
+offset_left = -24.5
+offset_top = 53.0
+offset_right = 25.5
+offset_bottom = 79.0
+texture_normal = ExtResource("2_btsnd")
+texture_pressed = ExtResource("2_btsnd")
+texture_hover = ExtResource("2_btsnd")
+texture_disabled = ExtResource("2_btsnd")
+texture_focused = ExtResource("2_btsnd")
+
+[node name="Label" type="Label" parent="MissionPopup/StartQuest" unique_id=2137344175]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 42.0
+offset_bottom = 19.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_g7moo")
+theme_override_font_sizes/font_size = 24
+text = "Begin"
+
+[node name="MissionName" type="Label" parent="MissionPopup" unique_id=204487995]
+offset_left = -49.0
+offset_top = -32.5
+offset_right = 147.0
+offset_bottom = 7.5
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_g7moo")
+theme_override_font_sizes/font_size = 16
+text = "Catch the Burglar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemSlots" type="Node2D" parent="MissionPopup" unique_id=882897793]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MissionPopup/ItemSlots" unique_id=1745782072 groups=["droppable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/StaticBody2D" unique_id=261074090 groups=["droppable"]]
+position = Vector2(-8, 30)
+shape = SubResource("RectangleShape2D_tjgw8")
+
+[node name="Slot1" type="TextureRect" parent="MissionPopup/ItemSlots/StaticBody2D/CollisionShape2D" unique_id=966362172]
+texture_filter = 1
+offset_left = -11.0
+offset_top = -19.0
+offset_right = 11.0
+offset_bottom = 19.0
+texture = ExtResource("4_b6tgf")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="MissionPopup/ItemSlots" unique_id=1360013221 groups=["droppable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/StaticBody2D2" unique_id=1186597222 groups=["droppable"]]
+position = Vector2(15, 30)
+shape = SubResource("RectangleShape2D_1lpcb")
+
+[node name="Slot2" type="TextureRect" parent="MissionPopup/ItemSlots/StaticBody2D2/CollisionShape2D" unique_id=2127736774]
+texture_filter = 1
+offset_left = -11.0
+offset_top = -19.0
+offset_right = 11.0
+offset_bottom = 19.0
+texture = ExtResource("4_b6tgf")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="MissionPopup/ItemSlots" unique_id=730651998 groups=["droppable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/StaticBody2D3" unique_id=582676424 groups=["droppable"]]
+position = Vector2(38, 30)
+shape = SubResource("RectangleShape2D_nvo3c")
+
+[node name="Slot3" type="TextureRect" parent="MissionPopup/ItemSlots/StaticBody2D3/CollisionShape2D" unique_id=466813513]
+texture_filter = 1
+offset_left = -11.0
+offset_top = -19.0
+offset_right = 11.0
+offset_bottom = 19.0
+texture = ExtResource("4_b6tgf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MissionPopup" unique_id=1868166576 groups=["droppable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/StaticBody2D" unique_id=1709641538 groups=["droppable"]]
+position = Vector2(-34.5, 18.5)
+shape = SubResource("RectangleShape2D_cxcsa")
+
+[node name="Slayer" type="TextureRect" parent="MissionPopup/StaticBody2D" unique_id=167851953]
+offset_left = -49.0
+offset_top = -12.0
+offset_right = -20.0
+offset_bottom = 49.0
+texture = ExtResource("5_fcjpd")
+
+[node name="Mission Success" type="ColorRect" parent="MissionPopup" unique_id=340358285]
+offset_left = -24.0
+offset_top = -49.0
+offset_right = 25.0
+offset_bottom = -34.0
+color = Color(0.5776001, 0.56336284, 0.566935, 1)
+
+[node name="Label" type="Label" parent="MissionPopup/Mission Success" unique_id=1875189178]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 98.0
+offset_bottom = 29.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_g7moo")
+theme_override_font_sizes/font_size = 20
+text = "TBD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlayerStatsNode" type="Node2D" parent="MissionPopup" unique_id=937931797]
+
+[node name="StrIcon" type="TextureRect" parent="MissionPopup/SlayerStatsNode" unique_id=800578882]
+offset_left = -19.0
+offset_top = -12.0
+offset_right = 49.0
+offset_bottom = 10.0
+texture = ExtResource("6_57beb")
+
+[node name="Str" type="Node2D" parent="MissionPopup/SlayerStatsNode/StrIcon" unique_id=1285434527]
+position = Vector2(19, 12)
+
+[node name="StrStat" type="Label" parent="MissionPopup/SlayerStatsNode/StrIcon/Str" unique_id=1847726763]
+offset_left = -18.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 32.5
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_g7moo")
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MissionPopup/SlayerStatsNode/StrIcon/Str" unique_id=117745278]
+visible = false
+offset_left = -19.0
+offset_top = -12.0
+offset_right = 3.0
+offset_bottom = 10.0
+texture = ExtResource("7_nvh1a")
+
+[node name="Agi" type="Node2D" parent="MissionPopup/SlayerStatsNode/StrIcon" unique_id=1777803368]
+position = Vector2(19, 12)
+
+[node name="AgiStat" type="Label" parent="MissionPopup/SlayerStatsNode/StrIcon/Agi" unique_id=1561866598]
+offset_left = 5.0
+offset_top = -11.5
+offset_right = 47.0
+offset_bottom = 32.5
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_g7moo")
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MissionPopup/SlayerStatsNode/StrIcon/Agi" unique_id=1621436687]
+visible = false
+offset_left = 4.0
+offset_top = -12.0
+offset_right = 26.0
+offset_bottom = 10.0
+texture = ExtResource("8_c2aw7")
+
+[node name="Int" type="Node2D" parent="MissionPopup/SlayerStatsNode/StrIcon" unique_id=164368226]
+position = Vector2(19, 12)
+
+[node name="IntStat" type="Label" parent="MissionPopup/SlayerStatsNode/StrIcon/Int" unique_id=107039997]
+offset_left = 28.0
+offset_top = -11.5
+offset_right = 70.0
+offset_bottom = 32.5
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_g7moo")
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MissionPopup/SlayerStatsNode/StrIcon/Int" unique_id=899256953]
+visible = false
+offset_left = 27.0
+offset_top = -12.0
+offset_right = 49.0
+offset_bottom = 10.0
+texture = ExtResource("8_c2aw7")
+
+[node name="MissionDifficulty" type="ColorRect" parent="MissionPopup" unique_id=1816184055]
+offset_left = 26.0
+offset_top = -49.0
+offset_right = 49.0
+offset_bottom = -34.0
+color = Color(0.8117647, 0.7607843, 0, 1)
+
+[node name="Label" type="Label" parent="MissionPopup/MissionDifficulty" unique_id=108882295]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 46.0
+offset_bottom = 29.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_g7moo")
+theme_override_font_sizes/font_size = 20
+text = "MED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MissionCompletionTime" type="Node2D" parent="MissionPopup" unique_id=29215616]
+
+[node name="ColorRect" type="ColorRect" parent="MissionPopup/MissionCompletionTime" unique_id=1596108998]
+offset_left = -49.0
+offset_top = -49.0
+offset_right = -25.0
+offset_bottom = -34.0
+color = Color(0.7411765, 0.20784314, 0.20784314, 1)
+
+[node name="MissionTimeLabel" type="Label" parent="MissionPopup/MissionCompletionTime" unique_id=1337122198]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = -2.0
+offset_bottom = -20.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_g7moo")
+theme_override_font_sizes/font_size = 20
+text = "16"
+horizontal_alignment = 1
+vertical_alignment = 1

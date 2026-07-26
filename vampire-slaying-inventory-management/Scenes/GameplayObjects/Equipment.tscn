@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bng4xr583dqvl" path="res://Assets/Slayers/Slayer1.png" id="3_wo240"]
 [ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="4_ep2g6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8rha"]
+size = Vector2(32, 64)
+
 [node name="Equipment" type="Node2D" unique_id=1702663850 node_paths=PackedStringArray("equipmentSprite", "NameLabel", "IntelligenceLabel", "StrengthLabel", "AgilityLabel")]
 script = ExtResource("1_0srq0")
 equipmentSprite = NodePath("EquipmentSprite")
@@ -17,6 +20,7 @@ AgilityLabel = NodePath("Agi")
 texture_filter = 1
 offset_right = 32.0
 offset_bottom = 64.0
+mouse_filter = 2
 texture = ExtResource("2_wdx84")
 
 [node name="EquipmentSprite" type="TextureRect" parent="." unique_id=1417389100]
@@ -24,6 +28,7 @@ texture_filter = 1
 offset_top = 3.0
 offset_right = 32.0
 offset_bottom = 35.0
+mouse_filter = 2
 texture = ExtResource("3_wo240")
 
 [node name="EquipmentName" type="Label" parent="." unique_id=743514713]
@@ -71,3 +76,9 @@ theme_override_font_sizes/font_size = 16
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1620240360]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1355113486]
+position = Vector2(16, 32)
+shape = SubResource("RectangleShape2D_k8rha")
