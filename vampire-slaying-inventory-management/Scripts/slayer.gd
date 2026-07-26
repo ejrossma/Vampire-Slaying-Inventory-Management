@@ -72,20 +72,20 @@ func _process(delta):
 		elif Input.is_action_just_released("click"):
 			global.is_dragging = false
 			var tween = get_tree().create_tween()
-			if is_inside_droppable:
-				tween.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)
+			if is_inside_droppable and is_instance_valid(body_ref):
+				tween.tween_property(self, "global_position", body_ref.global_position, 0.2).set_ease(Tween.EASE_OUT)
 			else:
 				tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
 
 func _on_area_2d_mouse_entered() -> void:
 	if not global.is_dragging:
 		draggable = true
-		scale = Vector2(1.05, 1.05)
+		scale = Vector2(2.1, 2.1)
 
 func _on_area_2d_mouse_exited() -> void:
 	if not global.is_dragging:
 		draggable = false
-		scale = Vector2(1,1)
+		scale = Vector2(2,2)
 
 func _on_area_2d_body_entered(body: StaticBody2D) -> void:
 	if body.is_in_group("droppable"):

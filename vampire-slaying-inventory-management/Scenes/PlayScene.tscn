@@ -44,7 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://b8i557r4rnscl" path="res://Scenes/TimerBar.tscn" id="42_ic4nc"]
 [ext_resource type="Script" uid="uid://v2lgywqt5hem" path="res://Scripts/RewardMenu.gd" id="43_7jdiu"]
 [ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="44_dqsny"]
-[ext_resource type="Texture2D" uid="uid://bew6p8ub4lgnd" path="res://Assets/Card.png" id="44_x53aa"]
+[ext_resource type="Texture2D" uid="uid://bew6p8ub4lgnd" path="res://Assets/card.png" id="44_x53aa"]
 
 [node name="Node2D" type="Node2D" unique_id=809813158 node_paths=PackedStringArray("slayerSlots", "inventorySlots", "card_reward_parent", "mission_parent", "FinalCountdown", "spawnInterval", "missionData", "itemData")]
 script = ExtResource("1_7vjhc")
@@ -261,3 +261,6 @@ theme_override_font_sizes/font_size = 25
 text = "Mission Success"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Slayer" parent="." unique_id=1188395146 instance=ExtResource("2_ennkr")]
+position = Vector2(331, 542)

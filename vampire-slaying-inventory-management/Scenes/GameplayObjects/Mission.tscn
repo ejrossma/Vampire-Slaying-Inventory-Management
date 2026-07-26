@@ -10,14 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://dds3tnrerg2dn" path="res://Assets/Mission Popup Slayer.png" id="7_nbg2v"]
 [ext_resource type="Texture2D" uid="uid://ckdusbl6rshch" path="res://Assets/Primary Indicator.png" id="7_owsbk"]
 [ext_resource type="Texture2D" uid="uid://bk4mj4psphukf" path="res://Assets/Secondary Indicator.png" id="8_kvhnx"]
+[ext_resource type="PackedScene" uid="uid://c1yrc73v07ada" path="res://Scenes/GameplayObjects/DroppableArea.tscn" id="8_yk2oi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1wsf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1ang"]
 size = Vector2(22, 38)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybyel"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxch3"]
 size = Vector2(22, 38)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3np7q"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfyp7"]
 size = Vector2(22, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8rha"]
@@ -53,9 +54,9 @@ strengthBorder = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Str/TextureRect"
 agilityBorder = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Agi/TextureRect")
 intelligenceBorder = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Int/TextureRect")
 slayerCard = NodePath("MissionPopup/StaticBody2D/Slayer")
-equipmentOneCard = NodePath("MissionPopup/ItemSlots/StaticBody2D/CollisionShape2D/Slot1")
-equipmentTwoCard = NodePath("MissionPopup/ItemSlots/StaticBody2D2/CollisionShape2D/Slot2")
-equipmentThreeCard = NodePath("MissionPopup/ItemSlots/StaticBody2D3/CollisionShape2D/Slot3")
+equipmentOneCard = NodePath("MissionPopup/ItemSlots/Slot1")
+equipmentTwoCard = NodePath("MissionPopup/ItemSlots/Slot2")
+equipmentThreeCard = NodePath("MissionPopup/ItemSlots/Slot3")
 
 [node name="MissionCompletionTimer" type="Timer" parent="." unique_id=208214877]
 
@@ -128,47 +129,65 @@ vertical_alignment = 1
 
 [node name="ItemSlots" type="Node2D" parent="MissionPopup" unique_id=1673958907]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="MissionPopup/ItemSlots" unique_id=1169783684 groups=["droppable"]]
+[node name="Slot1" type="TextureRect" parent="MissionPopup/ItemSlots" unique_id=794927134]
+texture_filter = 1
+offset_left = -19.0
+offset_top = 11.0
+offset_right = 3.0
+offset_bottom = 49.0
+texture = ExtResource("5_0cygo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/StaticBody2D" unique_id=1312315649 groups=["droppable"]]
+[node name="DroppableArea" parent="MissionPopup/ItemSlots/Slot1" unique_id=425733618 instance=ExtResource("8_yk2oi")]
+position = Vector2(19, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot1/DroppableArea" unique_id=302347642]
 position = Vector2(-8, 30)
-shape = SubResource("RectangleShape2D_i1wsf")
+shape = SubResource("RectangleShape2D_p1ang")
 
-[node name="Slot1" type="TextureRect" parent="MissionPopup/ItemSlots/StaticBody2D/CollisionShape2D" unique_id=794927134]
+[node name="ColorRect" type="ColorRect" parent="MissionPopup/ItemSlots/Slot1/DroppableArea" unique_id=1827167732]
+offset_left = -19.0
+offset_top = 11.0
+offset_right = 3.0
+offset_bottom = 49.0
+color = Color(1, 1, 1, 0.19607843)
+
+[node name="Slot2" type="TextureRect" parent="MissionPopup/ItemSlots" unique_id=1338546808]
 texture_filter = 1
-offset_left = -11.0
-offset_top = -19.0
-offset_right = 11.0
-offset_bottom = 19.0
+offset_left = 4.0
+offset_top = 11.0
+offset_right = 26.0
+offset_bottom = 49.0
 texture = ExtResource("5_0cygo")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="MissionPopup/ItemSlots" unique_id=1520367802 groups=["droppable"]]
+[node name="DroppableArea" parent="MissionPopup/ItemSlots/Slot2" unique_id=501993145 instance=ExtResource("8_yk2oi")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/StaticBody2D2" unique_id=1206251518 groups=["droppable"]]
-position = Vector2(15, 30)
-shape = SubResource("RectangleShape2D_ybyel")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot2/DroppableArea" unique_id=442768193]
+position = Vector2(11, 19)
+shape = SubResource("RectangleShape2D_kxch3")
 
-[node name="Slot2" type="TextureRect" parent="MissionPopup/ItemSlots/StaticBody2D2/CollisionShape2D" unique_id=1338546808]
+[node name="ColorRect2" type="ColorRect" parent="MissionPopup/ItemSlots/Slot2/DroppableArea" unique_id=158419553]
+offset_right = 22.0
+offset_bottom = 38.0
+color = Color(1, 1, 1, 0.19607843)
+
+[node name="Slot3" type="TextureRect" parent="MissionPopup/ItemSlots" unique_id=601984007]
 texture_filter = 1
-offset_left = -11.0
-offset_top = -19.0
-offset_right = 11.0
-offset_bottom = 19.0
+offset_left = 27.0
+offset_top = 11.0
+offset_right = 49.0
+offset_bottom = 49.0
 texture = ExtResource("5_0cygo")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="MissionPopup/ItemSlots" unique_id=2102358456 groups=["droppable"]]
+[node name="DroppableArea" parent="MissionPopup/ItemSlots/Slot3" unique_id=1690867685 instance=ExtResource("8_yk2oi")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/StaticBody2D3" unique_id=73022724 groups=["droppable"]]
-position = Vector2(38, 30)
-shape = SubResource("RectangleShape2D_3np7q")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot3/DroppableArea" unique_id=535028508]
+position = Vector2(11, 19)
+shape = SubResource("RectangleShape2D_nfyp7")
 
-[node name="Slot3" type="TextureRect" parent="MissionPopup/ItemSlots/StaticBody2D3/CollisionShape2D" unique_id=601984007]
-texture_filter = 1
-offset_left = -11.0
-offset_top = -19.0
-offset_right = 11.0
-offset_bottom = 19.0
-texture = ExtResource("5_0cygo")
+[node name="ColorRect3" type="ColorRect" parent="MissionPopup/ItemSlots/Slot3/DroppableArea" unique_id=633098908]
+offset_right = 22.0
+offset_bottom = 38.0
+color = Color(1, 1, 1, 0.19607843)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MissionPopup" unique_id=1975195463 groups=["droppable"]]
 
