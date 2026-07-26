@@ -1,5 +1,5 @@
 class_name slayer
-extends Node
+extends Node2D
 
 var ID : int
 var slayer_name : String
@@ -20,11 +20,6 @@ var slayerTexture : Texture
 func _ready() -> void:
 	updateCard()
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func getStat(stat : String) -> int:
 	if stat == "STRENGTH":

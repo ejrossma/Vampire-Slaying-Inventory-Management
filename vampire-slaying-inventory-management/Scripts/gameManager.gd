@@ -17,6 +17,7 @@ signal mission_expired(mission: mission)
 @export var inventorySlots : Node2D
 
 @export var slayer_scene : PackedScene
+@export var equipment_scene : PackedScene
 @export var card_reward_parent : Node2D
 
 @export var mission_scene : PackedScene
@@ -38,6 +39,7 @@ var items = []
 var missions : Array[mission] = []
 
 @export var slayerSprites : Array[Texture2D]
+@export var equipmentSprites : Array[Texture2D]
 
 var slayerNames := [
 	"John",
@@ -100,6 +102,42 @@ func _process(delta: float) -> void:
 func generateCardRewards() -> void:
 	return
 
+#Equipment Functions -------------------------------------
+func generateEquipment() -> void:
+	#instantiate an equipment
+	var newEquipment = equipment_scene.instantiate()
+	#select item
+	var newEquipmentData = selectEquipment()
+	#set name
+	newEquipment.equipment_name = newEquipmentData["Item"]
+	#set stats
+	newEquipment.assignStats(Vector3i(newEquipment["StrStat"], newEquipment["AgiStat"], newEquipment["IntStat"]))
+	#set sprite
+	newEquipment.equipmentTexture = equipmentSprites[newEquipment["ID"] - 1]
+	#update visuals
+	newEquipment.updateCard()
+	#assign parent
+	card_reward_parent.add_child(newEquipment)
+	
+func selectEquipment() -> Dictionary:
+	var chosenEquipment : Dictionary
+	
+	#0-10 common, #11-15 uncommon, #16-19 rare, #20 mythic
+	var rarity = randi_range(0, 20)
+	if rarity < 11:
+		while chosenEquipment.Rarity != "Common":
+			chosenEquipment = itemData.get_item(randi_range(1, 18))
+	elif rarity < 16:
+		while chosenEquipment.Rarity != "Uncommon":
+			chosenEquipment = itemData.get_item(randi_range(1, 18))
+	elif rarity < 20:
+		while chosenEquipment.Rarity != "Rare":
+			chosenEquipment = itemData.get_item(randi_range(1, 18))
+	else:
+		chosenEquipment = itemData.get_item(19)
+	
+	return chosenEquipment
+
 #Slayer Functions ----------------------------------------
 func generateSlayer() -> void:
 	#instantiate a slayer
@@ -109,7 +147,7 @@ func generateSlayer() -> void:
 	#generate stats
 	newSlayer.assignStats(generateSlayerStats())
 	#select sprite
-	newSlayer.slayerSprite = slayerSprites.pick_random()
+	newSlayer.slayerTexture = slayerSprites.pick_random()
 	#update visuals
 	newSlayer.updateCard()
 	#assign parent

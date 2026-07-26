@@ -4,17 +4,50 @@
 [ext_resource type="PackedScene" uid="uid://bgs6tnqettyok" path="res://Scenes/GameplayObjects/Mission.tscn" id="2_353r0"]
 [ext_resource type="PackedScene" uid="uid://cilcjbnqa6myi" path="res://Scenes/GameplayObjects/Slayer.tscn" id="2_ennkr"]
 [ext_resource type="Script" uid="uid://beyf5lapqkpyb" path="res://Scripts/ItemData.gd" id="3_353r0"]
+[ext_resource type="PackedScene" uid="uid://sxp567eekeq1" path="res://Scenes/GameplayObjects/Equipment.tscn" id="3_bdkau"]
 [ext_resource type="Texture2D" uid="uid://cejo4x7m7p588" path="res://Assets/Game Screen with Full Bottom.png" id="3_pd2lr"]
 [ext_resource type="Texture2D" uid="uid://bng4xr583dqvl" path="res://Assets/Slayers/Slayer1.png" id="3_yamew"]
 [ext_resource type="Texture2D" uid="uid://njnmaxxbvmyd" path="res://Assets/Slayers/Slayer2.png" id="4_ennkr"]
 [ext_resource type="Script" uid="uid://1uc8wx13qrlj" path="res://Scripts/MissionData.gd" id="4_pd2lr"]
 [ext_resource type="Texture2D" uid="uid://b8dws8qmekwld" path="res://Assets/Slayers/Slayer3.png" id="5_i7ohh"]
+[ext_resource type="Texture2D" uid="uid://dqxp7pju7awfp" path="res://Assets/Slayers/Slayer4.png" id="7_88gna"]
+[ext_resource type="Texture2D" uid="uid://0q0ews6efamc" path="res://Assets/Slayers/Slayer5.png" id="8_cyjmp"]
+[ext_resource type="Texture2D" uid="uid://b7nvcu7qjfig0" path="res://Assets/Slayers/Slayer6.png" id="9_p6e8c"]
+[ext_resource type="Texture2D" uid="uid://dewcjkasshuom" path="res://Assets/Slayers/Slayer7.png" id="10_qk6g7"]
+[ext_resource type="Texture2D" uid="uid://nbrfjwuf2xrj" path="res://Assets/Slayers/Slayer8.png" id="11_sh203"]
+[ext_resource type="Texture2D" uid="uid://bj166non6jbyk" path="res://Assets/Slayers/Slayer9.png" id="12_6k7dh"]
+[ext_resource type="Texture2D" uid="uid://wfsmp7jusr7y" path="res://Assets/Slayers/Slayer10.png" id="13_2qjwa"]
+[ext_resource type="Texture2D" uid="uid://yr06uv7jgfaf" path="res://Assets/Slayers/Slayer11.png" id="14_odsv6"]
+[ext_resource type="Texture2D" uid="uid://tf5rek6nye44" path="res://Assets/Slayers/Slayer12.png" id="15_f57un"]
+[ext_resource type="Texture2D" uid="uid://kdn0u6x3nxdr" path="res://Assets/Slayers/Slayer13.png" id="16_r6lx0"]
+[ext_resource type="Texture2D" uid="uid://bjnd8pd2ndg5" path="res://Assets/Slayers/Slayer14.png" id="17_xmwdg"]
+[ext_resource type="Texture2D" uid="uid://dbdqljreuuwdl" path="res://Assets/Slayers/Slayer15.png" id="18_bgpls"]
+[ext_resource type="Texture2D" uid="uid://f60824hlxhmt" path="res://Assets/Items/Stake.png" id="20_ic4nc"]
+[ext_resource type="Texture2D" uid="uid://nka2hti1eejt" path="res://Assets/Items/Sword(Bronze).png" id="21_7jdiu"]
+[ext_resource type="Texture2D" uid="uid://cleqth7urxkp4" path="res://Assets/Items/Sword(Silver).png" id="22_dqsny"]
+[ext_resource type="Texture2D" uid="uid://cve1d7k6wpvtt" path="res://Assets/Items/Sword(Hellstone).png" id="23_x53aa"]
+[ext_resource type="Texture2D" uid="uid://bppj6jwxftevv" path="res://Assets/Items/Chainwhip.png" id="24_qj8wk"]
+[ext_resource type="Texture2D" uid="uid://br0tj1bt1wnuo" path="res://Assets/Items/Chainwhip(Blessed).png" id="25_cihx0"]
+[ext_resource type="Texture2D" uid="uid://icqequ6lg4m" path="res://Assets/Items/Revolver(Iron).png" id="26_ry3wj"]
+[ext_resource type="Texture2D" uid="uid://botsi1o2nio31" path="res://Assets/Items/Revolver(Silver).png" id="27_eusip"]
+[ext_resource type="Texture2D" uid="uid://dplri3tqlf8e8" path="res://Assets/Items/Rosary(Wooden).png" id="28_nw4ue"]
+[ext_resource type="Texture2D" uid="uid://m8epaiv3pg7d" path="res://Assets/Items/Rosary(Silver).png" id="29_ny6ef"]
+[ext_resource type="Texture2D" uid="uid://c3kwp0uu75adj" path="res://Assets/Items/Rosary(Blessed).png" id="30_0ygng"]
+[ext_resource type="Texture2D" uid="uid://dlqu3dcnbi0g5" path="res://Assets/Items/Garlic.png" id="31_3xv5b"]
+[ext_resource type="Texture2D" uid="uid://dslhv2gqarjlb" path="res://Assets/Items/GarlicNecklace.png" id="32_ts7lx"]
+[ext_resource type="Texture2D" uid="uid://bgwe1xayxibhi" path="res://Assets/Items/GarlicSash.png" id="33_ar3u5"]
+[ext_resource type="Texture2D" uid="uid://bg4hfsgfeo8k4" path="res://Assets/Items/PendantOfFlame.png" id="34_thik2"]
+[ext_resource type="Texture2D" uid="uid://cxf0ju8xw4cqi" path="res://Assets/Items/AncientText.png" id="35_4kxkv"]
+[ext_resource type="Texture2D" uid="uid://cjrbkr1sywmd1" path="res://Assets/Items/Drifter Outfit.png" id="36_jvg7r"]
+[ext_resource type="Texture2D" uid="uid://ceybpo47s8sr7" path="res://Assets/Items/CrusaderOutfit.png" id="37_dkbvf"]
+[ext_resource type="Texture2D" uid="uid://b8ly7cddn3alk" path="res://Assets/Items/UltimateVampireSlayerJacket.png" id="38_ruxjk"]
 
 [node name="Node2D" type="Node2D" unique_id=809813158 node_paths=PackedStringArray("slayerSlots", "inventorySlots", "card_reward_parent", "mission_parent", "FinalCountdown", "spawnInterval", "missionData", "itemData")]
 script = ExtResource("1_7vjhc")
 slayerSlots = NodePath("SlayerSlots")
 inventorySlots = NodePath("InventorySlots")
 slayer_scene = ExtResource("2_ennkr")
+equipment_scene = ExtResource("3_bdkau")
 card_reward_parent = NodePath("Card Rewards")
 mission_scene = ExtResource("2_353r0")
 mission_parent = NodePath("Missions")
@@ -22,7 +55,8 @@ FinalCountdown = NodePath("DraculaTimer")
 spawnInterval = NodePath("SpawnTimer")
 missionData = NodePath("MissionData")
 itemData = NodePath("ItemData")
-slayerSprites = Array[Texture2D]([ExtResource("3_yamew"), ExtResource("4_ennkr"), ExtResource("5_i7ohh")])
+slayerSprites = Array[Texture2D]([ExtResource("3_yamew"), ExtResource("4_ennkr"), ExtResource("5_i7ohh"), ExtResource("7_88gna"), ExtResource("8_cyjmp"), ExtResource("9_p6e8c"), ExtResource("10_qk6g7"), ExtResource("11_sh203"), ExtResource("12_6k7dh"), ExtResource("13_2qjwa"), ExtResource("14_odsv6"), ExtResource("15_f57un"), ExtResource("16_r6lx0"), ExtResource("17_xmwdg"), ExtResource("18_bgpls")])
+equipmentSprites = Array[Texture2D]([ExtResource("20_ic4nc"), ExtResource("21_7jdiu"), ExtResource("22_dqsny"), ExtResource("23_x53aa"), ExtResource("24_qj8wk"), ExtResource("25_cihx0"), ExtResource("26_ry3wj"), ExtResource("27_eusip"), ExtResource("28_nw4ue"), ExtResource("29_ny6ef"), ExtResource("30_0ygng"), ExtResource("31_3xv5b"), ExtResource("32_ts7lx"), ExtResource("33_ar3u5"), ExtResource("34_thik2"), ExtResource("35_4kxkv"), ExtResource("36_jvg7r"), ExtResource("37_dkbvf"), ExtResource("38_ruxjk")])
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1584291336]
 texture_filter = 1
