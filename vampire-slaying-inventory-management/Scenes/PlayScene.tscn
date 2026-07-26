@@ -2,20 +2,27 @@
 
 [ext_resource type="Script" uid="uid://du61n8tryl7td" path="res://Scripts/gameManager.gd" id="1_7vjhc"]
 [ext_resource type="PackedScene" uid="uid://bgs6tnqettyok" path="res://Scenes/GameplayObjects/Mission.tscn" id="2_353r0"]
+[ext_resource type="PackedScene" uid="uid://cilcjbnqa6myi" path="res://Scenes/GameplayObjects/Slayer.tscn" id="2_ennkr"]
 [ext_resource type="Script" uid="uid://beyf5lapqkpyb" path="res://Scripts/ItemData.gd" id="3_353r0"]
 [ext_resource type="Texture2D" uid="uid://cejo4x7m7p588" path="res://Assets/Game Screen with Full Bottom.png" id="3_pd2lr"]
+[ext_resource type="Texture2D" uid="uid://bng4xr583dqvl" path="res://Assets/Slayers/Slayer1.png" id="3_yamew"]
+[ext_resource type="Texture2D" uid="uid://njnmaxxbvmyd" path="res://Assets/Slayers/Slayer2.png" id="4_ennkr"]
 [ext_resource type="Script" uid="uid://1uc8wx13qrlj" path="res://Scripts/MissionData.gd" id="4_pd2lr"]
+[ext_resource type="Texture2D" uid="uid://b8dws8qmekwld" path="res://Assets/Slayers/Slayer3.png" id="5_i7ohh"]
 
-[node name="Node2D" type="Node2D" unique_id=809813158 node_paths=PackedStringArray("slayerSlots", "inventorySlots", "mission_parent", "FinalCountdown", "spawnInterval", "missionData", "itemData")]
+[node name="Node2D" type="Node2D" unique_id=809813158 node_paths=PackedStringArray("slayerSlots", "inventorySlots", "card_reward_parent", "mission_parent", "FinalCountdown", "spawnInterval", "missionData", "itemData")]
 script = ExtResource("1_7vjhc")
 slayerSlots = NodePath("SlayerSlots")
 inventorySlots = NodePath("InventorySlots")
+slayer_scene = ExtResource("2_ennkr")
+card_reward_parent = NodePath("Card Rewards")
 mission_scene = ExtResource("2_353r0")
 mission_parent = NodePath("Missions")
 FinalCountdown = NodePath("DraculaTimer")
 spawnInterval = NodePath("SpawnTimer")
 missionData = NodePath("MissionData")
 itemData = NodePath("ItemData")
+slayerSprites = Array[Texture2D]([ExtResource("3_yamew"), ExtResource("4_ennkr"), ExtResource("5_i7ohh")])
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1584291336]
 texture_filter = 1
@@ -100,3 +107,5 @@ position = Vector2(1131, 561)
 
 [node name="Slot9" type="Node2D" parent="InventorySlots" unique_id=376122525]
 position = Vector2(1198, 561)
+
+[node name="Card Rewards" type="Node2D" parent="." unique_id=25792940]

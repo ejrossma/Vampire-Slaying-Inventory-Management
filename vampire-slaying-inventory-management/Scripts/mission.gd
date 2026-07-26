@@ -68,8 +68,8 @@ var assignedEquipmentTwo : equipment
 @export var equipmentThreeCard : TextureRect
 var assignedEquipmentThree : equipment
 
-#card rewards
-var cardsRewarded : int
+#missionSuccess
+var missionSuccess : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -78,7 +78,7 @@ func _ready() -> void:
 	waitTime.timeout.connect(questExpired)
 	
 	#setup mission completion timer
-	#TODO missionCompletionTimer.timeout.connect(calculateSuccess)
+	missionCompletionTimer.timeout.connect(calculateSuccess)
 	
 	StartQuest.pressed.connect(startQuest)
 
@@ -104,16 +104,13 @@ func updateSuccessPercentage(assignedCharacter, assignedEquipment) -> int:
 	#success
 	
 #calculate if successful or not
-#TODO func calculateSuccess() -> bool:
-	#success
-#	if randf(0, 1) < successChance:
-#		pass
-	
-	#failure
-#	else:
-		#check if lethal or nonlethal mission
-		#destroy gear
-#		pass
+func calculateSuccess() -> void:
+	if randf() < successChance:
+		missionSuccess = true
+	else:
+		missionSuccess = false
+	GameManager.instance.mission_completed.emit(self)
+	#TODO destroy gear
 	
 #TODO
 func assignSlayer() -> void:
