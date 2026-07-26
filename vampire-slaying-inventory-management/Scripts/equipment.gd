@@ -1,6 +1,7 @@
 class_name equipment
 extends Node2D
 
+var inventory_index : int
 var equipment_name : String
 
 var Strength : int
@@ -50,3 +51,8 @@ func updateCard() -> void:
 	AgilityLabel.text = str(getStat("AGILITY"))
 	NameLabel.text = equipment_name
 	equipmentSprite.texture = equipmentTexture
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		if event.button.index == MOUSE_BUTTON_LEFT and event.pressed:
+			GameManager.click(self)

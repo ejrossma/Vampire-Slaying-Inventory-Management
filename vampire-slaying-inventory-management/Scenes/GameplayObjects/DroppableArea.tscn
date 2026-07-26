@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://c1yrc73v07ada"]
-
-[ext_resource type="Script" uid="uid://cpnepvv3pfiya" path="res://Scripts/droppable_area.gd" id="1_thqb0"]
-
-[node name="DroppableArea" type="StaticBody2D" unique_id=425733618]
-script = ExtResource("1_thqb0")

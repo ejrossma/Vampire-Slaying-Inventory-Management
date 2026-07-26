@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dds3tnrerg2dn" path="res://Assets/Mission Popup Slayer.png" id="7_nbg2v"]
 [ext_resource type="Texture2D" uid="uid://ckdusbl6rshch" path="res://Assets/Primary Indicator.png" id="7_owsbk"]
 [ext_resource type="Texture2D" uid="uid://bk4mj4psphukf" path="res://Assets/Secondary Indicator.png" id="8_kvhnx"]
-[ext_resource type="PackedScene" uid="uid://c1yrc73v07ada" path="res://Scenes/GameplayObjects/DroppableArea.tscn" id="8_yk2oi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1ang"]
 size = Vector2(22, 38)
@@ -53,7 +52,7 @@ intelligenceLabel = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Int/IntStat")
 strengthBorder = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Str/TextureRect")
 agilityBorder = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Agi/TextureRect")
 intelligenceBorder = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Int/TextureRect")
-slayerCard = NodePath("MissionPopup/StaticBody2D/Slayer")
+slayerCard = NodePath("MissionPopup/Slayer")
 equipmentOneCard = NodePath("MissionPopup/ItemSlots/Slot1")
 equipmentTwoCard = NodePath("MissionPopup/ItemSlots/Slot2")
 equipmentThreeCard = NodePath("MissionPopup/ItemSlots/Slot3")
@@ -87,7 +86,6 @@ offset_bottom = 40.95238
 scale = Vector2(0.45833337, 0.9305917)
 
 [node name="MissionPopup" type="Sprite2D" parent="." unique_id=409862038]
-visible = false
 texture_filter = 1
 position = Vector2(50, 50)
 texture = ExtResource("2_0cygo")
@@ -135,21 +133,14 @@ offset_left = -19.0
 offset_top = 11.0
 offset_right = 3.0
 offset_bottom = 49.0
+mouse_filter = 2
 texture = ExtResource("5_0cygo")
 
-[node name="DroppableArea" parent="MissionPopup/ItemSlots/Slot1" unique_id=425733618 instance=ExtResource("8_yk2oi")]
-position = Vector2(19, -11)
+[node name="StaticBody2D" type="StaticBody2D" parent="MissionPopup/ItemSlots/Slot1" unique_id=989258676]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot1/DroppableArea" unique_id=302347642]
-position = Vector2(-8, 30)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot1/StaticBody2D" unique_id=302347642 groups=["droppable"]]
+position = Vector2(11, 19)
 shape = SubResource("RectangleShape2D_p1ang")
-
-[node name="ColorRect" type="ColorRect" parent="MissionPopup/ItemSlots/Slot1/DroppableArea" unique_id=1827167732]
-offset_left = -19.0
-offset_top = 11.0
-offset_right = 3.0
-offset_bottom = 49.0
-color = Color(1, 1, 1, 0.19607843)
 
 [node name="Slot2" type="TextureRect" parent="MissionPopup/ItemSlots" unique_id=1338546808]
 texture_filter = 1
@@ -157,18 +148,14 @@ offset_left = 4.0
 offset_top = 11.0
 offset_right = 26.0
 offset_bottom = 49.0
+mouse_filter = 2
 texture = ExtResource("5_0cygo")
 
-[node name="DroppableArea" parent="MissionPopup/ItemSlots/Slot2" unique_id=501993145 instance=ExtResource("8_yk2oi")]
+[node name="StaticBody2D" type="StaticBody2D" parent="MissionPopup/ItemSlots/Slot2" unique_id=641239363]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot2/DroppableArea" unique_id=442768193]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot2/StaticBody2D" unique_id=442768193 groups=["droppable"]]
 position = Vector2(11, 19)
 shape = SubResource("RectangleShape2D_kxch3")
-
-[node name="ColorRect2" type="ColorRect" parent="MissionPopup/ItemSlots/Slot2/DroppableArea" unique_id=158419553]
-offset_right = 22.0
-offset_bottom = 38.0
-color = Color(1, 1, 1, 0.19607843)
 
 [node name="Slot3" type="TextureRect" parent="MissionPopup/ItemSlots" unique_id=601984007]
 texture_filter = 1
@@ -176,31 +163,28 @@ offset_left = 27.0
 offset_top = 11.0
 offset_right = 49.0
 offset_bottom = 49.0
+mouse_filter = 2
 texture = ExtResource("5_0cygo")
 
-[node name="DroppableArea" parent="MissionPopup/ItemSlots/Slot3" unique_id=1690867685 instance=ExtResource("8_yk2oi")]
+[node name="StaticBody2D" type="StaticBody2D" parent="MissionPopup/ItemSlots/Slot3" unique_id=1796987604]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot3/DroppableArea" unique_id=535028508]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot3/StaticBody2D" unique_id=535028508 groups=["droppable"]]
 position = Vector2(11, 19)
 shape = SubResource("RectangleShape2D_nfyp7")
 
-[node name="ColorRect3" type="ColorRect" parent="MissionPopup/ItemSlots/Slot3/DroppableArea" unique_id=633098908]
-offset_right = 22.0
-offset_bottom = 38.0
-color = Color(1, 1, 1, 0.19607843)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="MissionPopup" unique_id=1975195463 groups=["droppable"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/StaticBody2D" unique_id=1668782367 groups=["droppable"]]
-position = Vector2(-34.5, 18.5)
-shape = SubResource("RectangleShape2D_k8rha")
-
-[node name="Slayer" type="TextureRect" parent="MissionPopup/StaticBody2D" unique_id=1988941239]
+[node name="Slayer" type="TextureRect" parent="MissionPopup" unique_id=1988941239]
 offset_left = -49.0
 offset_top = -12.0
 offset_right = -20.0
 offset_bottom = 49.0
+mouse_filter = 2
 texture = ExtResource("7_nbg2v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MissionPopup/Slayer" unique_id=1485112032]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/Slayer/StaticBody2D" unique_id=1668782367 groups=["droppable"]]
+position = Vector2(14.5, 30.5)
+shape = SubResource("RectangleShape2D_k8rha")
 
 [node name="Mission Success" type="ColorRect" parent="MissionPopup" unique_id=1087276171]
 offset_left = -24.0

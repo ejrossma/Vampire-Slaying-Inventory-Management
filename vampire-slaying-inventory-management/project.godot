@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-global="*uid://o611illins3m"
 AudioManager="*uid://bv8jphm2fh5hr"
 
 [display]
@@ -31,6 +30,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="Vampire Slaying Inventory Management"
+
+[global_group]
+
+selectable=""
 
 [input]
 

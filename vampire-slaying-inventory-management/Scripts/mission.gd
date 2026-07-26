@@ -19,7 +19,6 @@ var wasClicked : bool = false
 var started : bool = false
 var initialDuration : float
 
-
 #time before expiration
 @export var waitTime : Timer
 @export var waitTimeLength : float

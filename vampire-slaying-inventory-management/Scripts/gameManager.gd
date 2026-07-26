@@ -7,6 +7,9 @@ static var instance : GameManager:
 			instance = GameManager.new()
 		return instance
 
+#player
+var selected_item = null
+
 #signals
 signal slayer_killed()
 signal mission_spawned(mission: mission)
@@ -92,10 +95,26 @@ func _ready() -> void:
 	spawnInterval.timeout.connect(spawnMission)
 	mission_expired.connect(removeMission)
 	mission_completed.connect(completeMission)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	
+func click(object) -> void:
+	#if null then set item
+	if (selected_item == null):
+		selected_item = object
+	#if item of same type then swap them
+	if (object.getclass() == selected_item.getclass()):
+		#update indexes
+		var temp = selected_item.inventory_index
+		selected_item.inventory_index = object.inventory_index
+		object.inventory_index = temp
+		#update location
+		var location = selected_item.position
+		selected_item.position = object.position
+		object.position = location
+		#set selected to null
+		selected_item == null
+	#if click on empty slot on bench assign to that slot and remove reference from other index
+	#if 
+	
 
 #Card Reward Functions -----------------------------------
 func generateCardRewards() -> void:
@@ -199,6 +218,8 @@ func spawnMission() -> void:
 	#primary and secondary stat
 	newMission.primaryType = toType(newMissionData["PrimaryStat"])
 	newMission.secondaryType = toType(newMissionData["SecondaryStat"])
+	#lethality
+	newMission.isLethal = newMissionData["Lethality"]
 	
 	#call missionintialsetup
 	newMission.initialMissionSetup()
