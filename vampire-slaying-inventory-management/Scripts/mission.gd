@@ -18,6 +18,7 @@ enum Types { STRENGTH, AGILITY, INTELLIGENCE }
 var wasClicked : bool = false
 var started : bool = false
 var initialDuration : float
+@onready var lethal_markers: Node2D = $MissionPopup/LethalMarkers
 
 #time before expiration
 @export var waitTime : Timer
@@ -43,6 +44,9 @@ var missionCompletionTime : float
 @export var missionDifficultyLabel : Label
 @export var missionDifficultyBackground : ColorRect
 var missionDifficulty : int
+
+#mission lethality
+var isLethal : bool
 
 #success chance
 @export var successChanceLabel : Label
@@ -220,7 +224,7 @@ func setMissionPrimarySecondary() -> void:
 		intelligenceBorder.texture = secondaryBorder
 	
 func setMissionLethality() -> void:
-	return
+		lethal_markers.visible = isLethal
 
 func toggleMenu() -> void:
 	mission_popup.visible = !mission_popup.visible
