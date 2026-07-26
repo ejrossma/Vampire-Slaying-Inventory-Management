@@ -28,9 +28,8 @@ autostart = true
 
 [node name="TextureRect3" type="TextureRect" parent="." unique_id=2039753600]
 texture_filter = 1
-offset_left = 856.0
 offset_top = -2.0
-offset_right = 897.0
+offset_right = 41.0
 offset_bottom = 38.0
 texture = ExtResource("4_vyx2x")
 
