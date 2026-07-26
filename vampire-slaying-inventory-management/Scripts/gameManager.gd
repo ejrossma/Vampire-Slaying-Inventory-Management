@@ -102,7 +102,7 @@ func generateCardRewards() -> void:
 	return
 
 #Equipment Functions -------------------------------------
-func generateEquipment() -> void:
+func generateEquipment() -> equipment:
 	#instantiate an equipment
 	var newEquipment = equipment_scene.instantiate()
 	#select item
@@ -116,7 +116,8 @@ func generateEquipment() -> void:
 	#update visuals
 	newEquipment.updateCard()
 	#assign parent
-	card_reward_parent.add_child(newEquipment)
+	#card_reward_parent.add_child(newEquipment)
+	return newEquipment
 	
 func selectEquipment() -> Dictionary:
 	var chosenEquipment : Dictionary
@@ -138,7 +139,7 @@ func selectEquipment() -> Dictionary:
 	return chosenEquipment
 
 #Slayer Functions ----------------------------------------
-func generateSlayer() -> void:
+func generateSlayer() -> slayer:
 	#instantiate a slayer
 	var newSlayer = slayer_scene.instantiate()
 	#select name
@@ -150,7 +151,8 @@ func generateSlayer() -> void:
 	#update visuals
 	newSlayer.updateCard()
 	#assign parent
-	card_reward_parent.add_child(newSlayer)
+	#card_reward_parent.add_child(newSlayer)
+	return newSlayer
 	
 func generateSlayerStats() -> Vector3i:
 	var slayerStats = Vector3i(1 + currentVamp, 1 + currentVamp, 1 + currentVamp)

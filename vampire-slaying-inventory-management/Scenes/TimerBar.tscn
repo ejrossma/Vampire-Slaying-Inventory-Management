@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b8i557r4rnscl"]
 
-[ext_resource type="Script" uid="uid://bdsntel165pjy" path="res://Scenes/TimerBar.gd" id="1_43t67"]
+[ext_resource type="Script" uid="uid://bdsntel165pjy" path="res://Scripts/TimerBar.gd" id="1_43t67"]
 [ext_resource type="Texture2D" uid="uid://dqjtm807ohcum" path="res://Assets/TimerBar.png" id="2_gi83b"]
 [ext_resource type="Texture2D" uid="uid://dgs7bwtb8k3tx" path="res://Assets/TimerBarProgress.png" id="3_gi83b"]
 [ext_resource type="Texture2D" uid="uid://bxh8pb0nu06v6" path="res://Assets/TimerTombstone.png" id="4_vyx2x"]
