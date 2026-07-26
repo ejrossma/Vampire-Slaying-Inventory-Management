@@ -1,5 +1,5 @@
 class_name RewardMenu
-extends Node2D
+extends ColorRect
 
 @export var slot_1: TextureRect
 @export var slot_2: TextureRect
@@ -15,10 +15,6 @@ extends Node2D
 func _ready() -> void:
 	button_1.pressed.connect(pickFirst)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func populateSlots() -> void:
 	rewards = []
