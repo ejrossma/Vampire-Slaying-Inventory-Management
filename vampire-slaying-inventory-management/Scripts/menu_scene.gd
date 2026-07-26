@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @export var instructionsPage : ColorRect
-func _ready():	
+func _ready():
 	AudioManager.play_MainMenuMusic()
 func _on_button_pressed() -> void:
 	AudioManager.stop_MainMenuMusic()

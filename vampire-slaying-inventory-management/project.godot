@@ -17,11 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-<<<<<<< HEAD
-AudioManager="*uid://bv8jphm2fh5hr"
-=======
 global="*uid://o611illins3m"
->>>>>>> 43aa88c015d5d246795122211c80e12db5174dcf
+AudioManager="*uid://bv8jphm2fh5hr"
 
 [display]
 
