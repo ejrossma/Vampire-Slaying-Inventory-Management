@@ -9,8 +9,6 @@ func _on_button_pressed() -> void:
 
 func _on_button_pressed_instructions() -> void:
 	instructionsPage.visible = true
-	get_tree().paused = true
 	
 func _on_button_pressed_back() -> void:
 	instructionsPage.visible = false
-	get_tree().paused = false

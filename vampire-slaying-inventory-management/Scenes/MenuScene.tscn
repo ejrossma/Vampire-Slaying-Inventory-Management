@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://u2jkf8qego6a" path="res://Scripts/menu_scene.gd" id="1_xx56i"]
 [ext_resource type="Texture2D" uid="uid://cgluw8ldygvjp" path="res://Assets/Background Try Two.png" id="2_xx56i"]
 [ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="3_vg0ck"]
-[ext_resource type="PackedScene" uid="uid://bgs6tnqettyok" path="res://Scenes/GameplayObjects/Mission.tscn" id="4_u7fmy"]
+[ext_resource type="PackedScene" uid="uid://cn0ou48867okd" path="res://Scenes/DummyMission.tscn" id="4_w4qjd"]
 [ext_resource type="Texture2D" uid="uid://ckdusbl6rshch" path="res://Assets/Primary Indicator.png" id="5_w4qjd"]
 [ext_resource type="Texture2D" uid="uid://bk4mj4psphukf" path="res://Assets/Secondary Indicator.png" id="6_at33a"]
 
@@ -116,7 +116,6 @@ theme_override_font_sizes/font_size = 24
 text = " Instructions "
 
 [node name="Instructions" type="ColorRect" parent="Control" unique_id=79864685]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -125,9 +124,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.19215687, 0.19215687, 0.19215687, 0.78431374)
 
-[node name="Mission" parent="Control/Instructions" unique_id=1162786655 instance=ExtResource("4_u7fmy")]
+[node name="DummyMission" parent="Control/Instructions" unique_id=470641353 instance=ExtResource("4_w4qjd")]
 position = Vector2(536, 242)
-waitTimeLength = 1000.0
+scale = Vector2(2, 2)
 
 [node name="Label" type="Label" parent="Control/Instructions" unique_id=2105303709]
 layout_mode = 0
