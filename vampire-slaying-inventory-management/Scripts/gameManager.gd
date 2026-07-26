@@ -218,7 +218,7 @@ func toType(type) -> mission.Types:
 		return mission.Types.INTELLIGENCE
 		
 func generateMissionLocation() -> Vector2:
-	return Vector2(randf_range(270, 1020), randf_range(125, 335))
+	return Vector2(randf_range(270, 1020), randf_range(125, 240))
 	
 func removeMission(missionToErase) -> void:
 	missions.erase(missionToErase)

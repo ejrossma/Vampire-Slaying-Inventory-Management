@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ct3x3hnadrh4f" path="res://Scripts/mission.gd" id="1_pphu7"]
 [ext_resource type="Texture2D" uid="uid://513t7nefjkfg" path="res://Assets/Mission Popup.png" id="2_0cygo"]
 [ext_resource type="Texture2D" uid="uid://bny1boxdj5vme" path="res://Assets/Begin Mission Button.png" id="3_tefnd"]
+[ext_resource type="Texture2D" uid="uid://bkjehg5ldsoxg" path="res://Assets/Mission Marker.png" id="4_kvhnx"]
 [ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="4_nbg2v"]
 [ext_resource type="Texture2D" uid="uid://cs2q6xprc2prq" path="res://Assets/Mission Popup Slot.png" id="5_0cygo"]
 [ext_resource type="Texture2D" uid="uid://3jyggfed3n47" path="res://Assets/Mission Popup Slayer Stats.png" id="6_tefnd"]
@@ -62,7 +63,30 @@ equipmentThreeCard = NodePath("MissionPopup/ItemSlots/StaticBody2D3/CollisionSha
 wait_time = 15.0
 autostart = true
 
+[node name="MissionPing" type="TextureProgressBar" parent="." unique_id=1319164760]
+texture_filter = 1
+offset_left = 32.5
+offset_top = 114.50001
+offset_right = 72.5
+offset_bottom = 154.5
+scale = Vector2(1, 1.003)
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("4_kvhnx")
+texture_progress = ExtResource("4_kvhnx")
+tint_progress = Color(0.8627451, 0, 0.08235294, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="MissionPing" unique_id=1316281042]
+layout_mode = 0
+offset_left = 9.3167715
+offset_top = 0.95238113
+offset_right = 49.316772
+offset_bottom = 40.95238
+scale = Vector2(0.45833337, 0.9305917)
+
 [node name="MissionPopup" type="Sprite2D" parent="." unique_id=409862038]
+visible = false
 texture_filter = 1
 position = Vector2(50, 50)
 texture = ExtResource("2_0cygo")

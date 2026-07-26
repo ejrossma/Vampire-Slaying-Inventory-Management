@@ -11,6 +11,15 @@ enum Types { STRENGTH, AGILITY, INTELLIGENCE }
 @export var red : Color
 @export var gray : Color
 
+#popup
+@onready var mission_popup: Sprite2D = $MissionPopup
+@onready var mission_ping: TextureProgressBar = $MissionPing
+@onready var ping_button: TextureButton = $MissionPing/TextureButton
+var wasClicked : bool = false
+var started : bool = false
+var initialDuration : float
+
+
 #time before expiration
 @export var waitTime : Timer
 @export var waitTimeLength : float
@@ -81,16 +90,25 @@ func _ready() -> void:
 	missionCompletionTimer.timeout.connect(calculateSuccess)
 	
 	StartQuest.pressed.connect(startQuest)
+	mission_popup.visible = false
+	wasClicked = false
+	ping_button.pressed.connect(toggleMenu)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if started == false:
+		mission_ping.value = (waitTime.time_left / 15) * 100
+	else:
+		mission_ping.value = (missionCompletionTimer.time_left / missionCompletionTime) * 100
 
 func startQuest() -> void:
 	if assignedCharacter != null:
 		waitTime.stop()
+		started = true
+		mission_ping.tint_progress = Color(0, .7, 0)
 		missionCompletionTimer.start()
+		toggleMenu()
 
 func questExpired() -> void:
 	#if there is a slayer in the quest the quest gets started
@@ -204,4 +222,7 @@ func setMissionPrimarySecondary() -> void:
 	
 func setMissionLethality() -> void:
 	return
-	
+
+func toggleMenu() -> void:
+	mission_popup.visible = !mission_popup.visible
+	wasClicked = true
