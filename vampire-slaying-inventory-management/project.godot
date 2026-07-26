@@ -17,7 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+<<<<<<< HEAD
 AudioManager="*uid://bv8jphm2fh5hr"
+=======
+global="*uid://o611illins3m"
+>>>>>>> 43aa88c015d5d246795122211c80e12db5174dcf
 
 [display]
 
@@ -30,6 +34,14 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="Vampire Slaying Inventory Management"
+
+[input]
+
+click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
 
 [physics]
 
