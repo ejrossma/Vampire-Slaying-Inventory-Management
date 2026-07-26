@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://cjrbkr1sywmd1" path="res://Assets/Items/Drifter Outfit.png" id="36_jvg7r"]
 [ext_resource type="Texture2D" uid="uid://ceybpo47s8sr7" path="res://Assets/Items/CrusaderOutfit.png" id="37_dkbvf"]
 [ext_resource type="Texture2D" uid="uid://b8ly7cddn3alk" path="res://Assets/Items/UltimateVampireSlayerJacket.png" id="38_ruxjk"]
+[ext_resource type="PackedScene" uid="uid://b8i557r4rnscl" path="res://Scenes/TimerBar.tscn" id="42_ic4nc"]
 
 [node name="Node2D" type="Node2D" unique_id=809813158 node_paths=PackedStringArray("slayerSlots", "inventorySlots", "card_reward_parent", "mission_parent", "FinalCountdown", "spawnInterval", "missionData", "itemData")]
 script = ExtResource("1_7vjhc")
@@ -143,3 +144,6 @@ position = Vector2(1131, 561)
 position = Vector2(1198, 561)
 
 [node name="Card Rewards" type="Node2D" parent="." unique_id=25792940]
+
+[node name="TimerBar" parent="." unique_id=1062800178 instance=ExtResource("42_ic4nc")]
+position = Vector2(190, 6)

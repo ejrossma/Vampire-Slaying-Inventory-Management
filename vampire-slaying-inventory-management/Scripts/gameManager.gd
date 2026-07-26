@@ -93,7 +93,6 @@ func _ready() -> void:
 	mission_expired.connect(removeMission)
 	mission_completed.connect(completeMission)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
