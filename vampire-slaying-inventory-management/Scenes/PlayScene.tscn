@@ -151,12 +151,18 @@ position = Vector2(1198, 561)
 [node name="TimerBar" parent="." unique_id=1062800178 instance=ExtResource("42_ic4nc")]
 position = Vector2(190, 6)
 
-[node name="RewardMenu2" type="ColorRect" parent="." unique_id=1141423970]
+[node name="RewardMenu2" type="ColorRect" parent="." unique_id=1141423970 node_paths=PackedStringArray("slot_1", "slot_2", "slot_3", "button_1", "button_2", "button_3")]
 visible = false
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.28627452, 0.28627452, 0.28627452, 0.78431374)
 script = ExtResource("43_7jdiu")
+slot_1 = NodePath("ColorRect/Slot1")
+slot_2 = NodePath("ColorRect/Slot2")
+slot_3 = NodePath("ColorRect/Slot3")
+button_1 = NodePath("ColorRect/Slot1/Button")
+button_2 = NodePath("ColorRect/Slot2/Button2")
+button_3 = NodePath("ColorRect/Slot3/Button3")
 
 [node name="ColorRect" type="ColorRect" parent="RewardMenu2" unique_id=909379907]
 layout_mode = 0
