@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bew6p8ub4lgnd"
-path="res://.godot/imported/card.png-227bfe2201ac5b824c6a54accd7a49dd.ctex"
+uid="uid://cejo4x7m7p588"
+path="res://.godot/imported/Game Screen with Full Bottom.png-4ee418ea18b72e3339fffa394936ebd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/card.png"
-dest_files=["res://.godot/imported/card.png-227bfe2201ac5b824c6a54accd7a49dd.ctex"]
+source_file="res://Assets/Game Screen with Full Bottom.png"
+dest_files=["res://.godot/imported/Game Screen with Full Bottom.png-4ee418ea18b72e3339fffa394936ebd6.ctex"]
 
 [params]
 

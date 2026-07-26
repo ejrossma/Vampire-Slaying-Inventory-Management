@@ -7,13 +7,14 @@ static var instance : GameManager:
 			instance = GameManager.new()
 		return instance
 
-enum Types { STRENGTH, AGILITY, INTELLIGENCE }
-
 #signals
 signal slayer_killed()
 signal mission_spawned(mission: mission)
 signal mission_completed(mission: mission)
 signal mission_expired(mission: mission)
+
+@export var slayerSlots : Node2D
+@export var inventorySlots : Node2D
 
 @export var mission_scene : PackedScene
 @export var mission_parent : Node
@@ -83,16 +84,16 @@ func spawnMission() -> void:
 	#add mission to scene
 	mission_parent.add_child(newMission)
 	
-func toType(type) -> Types:
+func toType(type) -> mission.Types:
 	if type == "Agi":
-		return Types.AGILITY
+		return mission.Types.AGILITY
 	elif type == "Str":
-		return Types.STRENGTH
+		return mission.Types.STRENGTH
 	else:
-		return Types.INTELLIGENCE
+		return mission.Types.INTELLIGENCE
 		
 func generateMissionLocation() -> Vector2:
-	return Vector2(100,100)
+	return Vector2(randf_range(270, 1020), randf_range(125, 335))
 	
 func removeMission(missionToErase) -> void:
 	missions.erase(missionToErase)

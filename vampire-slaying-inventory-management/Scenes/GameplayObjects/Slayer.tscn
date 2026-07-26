@@ -1,3 +1,75 @@
 [gd_scene format=3 uid="uid://cilcjbnqa6myi"]
 
-[node name="Slayer" type="Node2D" unique_id=1188395146]
+[ext_resource type="Script" uid="uid://dmn2yrxcs2fpv" path="res://Scripts/slayer.gd" id="1_pr6wi"]
+[ext_resource type="Texture2D" uid="uid://bew6p8ub4lgnd" path="res://Assets/card.png" id="1_xo4py"]
+[ext_resource type="Texture2D" uid="uid://bng4xr583dqvl" path="res://Assets/Slayers/Slayer1.png" id="2_pr6wi"]
+[ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="3_727w5"]
+
+[node name="Slayer" type="Node2D" unique_id=1188395146 node_paths=PackedStringArray("IntelligenceLabel", "StrengthLabel", "AgilityLabel")]
+scale = Vector2(2, 2)
+script = ExtResource("1_pr6wi")
+Strength = 3
+Agility = 1
+Intelligence = 1
+IntelligenceLabel = NodePath("Int")
+StrengthLabel = NodePath("Str")
+AgilityLabel = NodePath("Agi")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1739707829]
+texture_filter = 1
+offset_right = 32.0
+offset_bottom = 64.0
+texture = ExtResource("1_xo4py")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2108826636]
+texture_filter = 1
+offset_top = 3.0
+offset_right = 32.0
+offset_bottom = 35.0
+texture = ExtResource("2_pr6wi")
+
+[node name="SlayerName" type="Label" parent="." unique_id=2009424791]
+offset_top = -8.0
+offset_right = 64.0
+offset_bottom = 8.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_727w5")
+theme_override_font_sizes/font_size = 16
+text = "George"
+horizontal_alignment = 1
+
+[node name="Int" type="Label" parent="." unique_id=604344468]
+offset_left = 11.5
+offset_top = 54.0
+offset_right = 48.5
+offset_bottom = 70.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_727w5")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Str" type="Label" parent="." unique_id=1791497131]
+offset_left = 11.5
+offset_top = 38.0
+offset_right = 48.5
+offset_bottom = 54.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_727w5")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Agi" type="Label" parent="." unique_id=438917448]
+offset_left = 11.5
+offset_top = 46.0
+offset_right = 48.5
+offset_bottom = 62.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_727w5")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
