@@ -5,12 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bng4xr583dqvl" path="res://Assets/Slayers/Slayer1.png" id="2_pr6wi"]
 [ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="3_727w5"]
 
-[node name="Slayer" type="Node2D" unique_id=1188395146 node_paths=PackedStringArray("IntelligenceLabel", "StrengthLabel", "AgilityLabel")]
+[node name="Slayer" type="Node2D" unique_id=1188395146 node_paths=PackedStringArray("slayerSprite", "NameLabel", "IntelligenceLabel", "StrengthLabel", "AgilityLabel")]
 scale = Vector2(2, 2)
 script = ExtResource("1_pr6wi")
-Strength = 3
-Agility = 1
-Intelligence = 1
+slayerSprite = NodePath("SlayerSprite")
+NameLabel = NodePath("SlayerName")
 IntelligenceLabel = NodePath("Int")
 StrengthLabel = NodePath("Str")
 AgilityLabel = NodePath("Agi")
@@ -21,7 +20,7 @@ offset_right = 32.0
 offset_bottom = 64.0
 texture = ExtResource("1_xo4py")
 
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=2108826636]
+[node name="SlayerSprite" type="TextureRect" parent="." unique_id=2108826636]
 texture_filter = 1
 offset_top = 3.0
 offset_right = 32.0

@@ -16,13 +16,17 @@ signal mission_expired(mission: mission)
 @export var slayerSlots : Node2D
 @export var inventorySlots : Node2D
 
+@export var slayer_scene : PackedScene
+@export var card_reward_parent : Node2D
+
 @export var mission_scene : PackedScene
 @export var mission_parent : Node
 
 @export var FinalCountdown : Timer
 @export var spawnInterval : Timer
 var currentVamp : int = 0
-var reputation : int
+var reputation : int = 0
+var repToNextSlayer : int = 30
 const MAX_SLAYERS : int = 10
 var slayers : Array[slayer] = []
 const MAX_ITEMS : int = 10
@@ -32,6 +36,51 @@ var items = []
 @export var itemData : ItemData
 
 var missions : Array[mission] = []
+
+@export var slayerSprites : Array[Texture2D]
+
+var slayerNames := [
+	"John",
+	"Joe",
+	"Bob",
+	"George",
+	"Frank",
+	"Brian",
+	"Nate",
+	"Kelly",
+	"Evan",
+	"Thomas",
+	"Jose",
+	"Adam",
+	"Travis",
+	"Scott",
+	"Ethan",
+	"Ulrich",
+	"Trevor",
+	"Tony",
+	"Ely",
+	"Jaxon",
+	"Drake",
+	"Brock",
+	"Christian",
+	"LeSlayer",
+	"Geralt",
+	"Davion",
+	"Matilda",
+	"Beth",
+	"Genevieve",
+	"Margery",
+	"Aveline",
+	"Eleanor",
+	"Elie",
+	"Isabel",
+	"Adelaide",
+	"Kaladin",
+	"Shallan",
+	"Adolin",
+	"Navani",
+	"Dalinar"
+]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -47,6 +96,43 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+#Card Reward Functions -----------------------------------
+func generateCardRewards() -> void:
+	return
+
+#Slayer Functions ----------------------------------------
+func generateSlayer() -> void:
+	#instantiate a slayer
+	var newSlayer = slayer_scene.instantiate()
+	#select name
+	newSlayer.slayer_name = slayerNames.pick_random()
+	#generate stats
+	newSlayer.assignStats(generateSlayerStats())
+	#select sprite
+	newSlayer.slayerSprite = slayerSprites.pick_random()
+	#update visuals
+	newSlayer.updateCard()
+	#assign parent
+	card_reward_parent.add_child(newSlayer)
+	
+func generateSlayerStats() -> Vector3i:
+	var slayerStats = Vector3i(1 + currentVamp, 1 + currentVamp, 1 + currentVamp)
+	var statsToAssign = 3 + currentVamp
+	
+	while statsToAssign > 0:
+		var statToIncrease = randi_range(0, 2)
+		match statToIncrease:
+			0:
+				slayerStats.x += 1
+			1:
+				slayerStats.y += 1
+			2:
+				slayerStats.z += 1
+		statsToAssign -= 1
+	
+	return slayerStats
+
+#Mission Functions ---------------------------------------
 func spawnMission() -> void:
 	if (missions.size() > slayers.size()):
 		return
@@ -99,5 +185,20 @@ func removeMission(missionToErase) -> void:
 	missions.erase(missionToErase)
 
 func completeMission(missionCompleted) -> void:
+	#check if the mission was successful or failed
+	if missionCompleted.missionSuccess:
+		reputation += 5 * missionCompleted.missionDifficulty + 10
+		if (reputation > repToNextSlayer and slayers.size() < 9):
+			#reduce current rep to start working towards next slayer
+			reputation -= repToNextSlayer
+			#increase amount needed
+			repToNextSlayer += 20
+			#TODO add slayer reward to rewards
+		#TODO Show rewards screen
+	else:
+		#TODO Check for lethality
+		pass
+	#remove the mission from mission array
 	missions.erase(missionCompleted)
-	#TODO Show rewards screen
+	
+	
