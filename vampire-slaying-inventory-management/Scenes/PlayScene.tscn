@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://beyf5lapqkpyb" path="res://Scripts/ItemData.gd" id="3_353r0"]
 [ext_resource type="Texture2D" uid="uid://cejo4x7m7p588" path="res://Assets/Game Screen with Full Bottom.png" id="3_pd2lr"]
 [ext_resource type="Script" uid="uid://1uc8wx13qrlj" path="res://Scripts/MissionData.gd" id="4_pd2lr"]
-[ext_resource type="PackedScene" uid="uid://cilcjbnqa6myi" path="res://Scenes/GameplayObjects/Slayer.tscn" id="6_pd2lr"]
 
 [node name="Node2D" type="Node2D" unique_id=809813158 node_paths=PackedStringArray("slayerSlots", "inventorySlots", "mission_parent", "FinalCountdown", "spawnInterval", "missionData", "itemData")]
 script = ExtResource("1_7vjhc")
@@ -43,33 +42,6 @@ wait_time = 5.0
 autostart = true
 
 [node name="Missions" type="Node" parent="." unique_id=102419144]
-
-[node name="Slayer" parent="." unique_id=1188395146 instance=ExtResource("6_pd2lr")]
-position = Vector2(86, 561)
-
-[node name="Slayer7" parent="." unique_id=1457566943 instance=ExtResource("6_pd2lr")]
-position = Vector2(19, 561)
-
-[node name="Slayer2" parent="." unique_id=34792126 instance=ExtResource("6_pd2lr")]
-position = Vector2(153, 561)
-
-[node name="Slayer3" parent="." unique_id=2139292383 instance=ExtResource("6_pd2lr")]
-position = Vector2(220, 561)
-
-[node name="Slayer4" parent="." unique_id=1653410770 instance=ExtResource("6_pd2lr")]
-position = Vector2(287, 561)
-
-[node name="Slayer5" parent="." unique_id=1933569312 instance=ExtResource("6_pd2lr")]
-position = Vector2(354, 561)
-
-[node name="Slayer6" parent="." unique_id=10500143 instance=ExtResource("6_pd2lr")]
-position = Vector2(421, 561)
-
-[node name="Slayer8" parent="." unique_id=304505406 instance=ExtResource("6_pd2lr")]
-position = Vector2(488, 561)
-
-[node name="Slayer9" parent="." unique_id=163086504 instance=ExtResource("6_pd2lr")]
-position = Vector2(555, 561)
 
 [node name="SlayerSlots" type="Node2D" parent="." unique_id=1973929358]
 
