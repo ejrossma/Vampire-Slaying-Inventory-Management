@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgs6tnqettyok"]
 
-[ext_resource type="Script" uid="uid://ct3x3hnadrh4f" path="res://Scripts/Mission.gd" id="1_pphu7"]
+[ext_resource type="Script" uid="uid://ct3x3hnadrh4f" path="res://Scripts/mission.gd" id="1_pphu7"]
 [ext_resource type="Texture2D" uid="uid://513t7nefjkfg" path="res://Assets/Mission Popup.png" id="2_0cygo"]
 [ext_resource type="Texture2D" uid="uid://bny1boxdj5vme" path="res://Assets/Begin Mission Button.png" id="3_tefnd"]
 [ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="4_nbg2v"]
@@ -13,18 +13,29 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybyel"]
 size = Vector2(22, 38)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3np7q"]
-size = Vector2(29, 61)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jhai"]
-size = Vector2(80, 83)
-
-[node name="Mission" type="Node2D" unique_id=1162786655 node_paths=PackedStringArray("duration", "waitTime")]
+[node name="Mission" type="Node2D" unique_id=1162786655 node_paths=PackedStringArray("waitTime", "duration", "missionNameLabel", "missionCompletionTimeLabel", "missionCompletionTimeBackground", "missionDifficultyLabel", "missionDifficultyBackground", "successChanceLabel", "successChanceBackground", "strengthLabel", "agilityLabel", "intelligenceLabel", "strengthBorder", "agilityBorder", "intelligenceBorder")]
 script = ExtResource("1_pphu7")
-duration = NodePath("Duration")
 waitTime = NodePath("WaitTime")
+primaryType = null
+secondaryType = null
+duration = NodePath("MissionCompletionTimer")
+missionNameLabel = NodePath("MissionPopup/MissionName")
+missionCompletionTimeLabel = NodePath("MissionPopup/MissionCompletionTime/MissionTimeLabel")
+missionCompletionTimeBackground = NodePath("MissionPopup/MissionCompletionTime/ColorRect")
+missionDifficultyLabel = NodePath("MissionPopup/MissionDifficulty/Label")
+missionDifficultyBackground = NodePath("MissionPopup/MissionDifficulty")
+successChanceLabel = NodePath("MissionPopup/Mission Success/Label")
+successChanceBackground = NodePath("MissionPopup/Mission Success")
+primaryBorder = ExtResource("7_owsbk")
+secondaryBorder = ExtResource("8_kvhnx")
+strengthLabel = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Str/StrStat")
+agilityLabel = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Agi/AgiStat")
+intelligenceLabel = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Int/IntStat")
+strengthBorder = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Str/TextureRect")
+agilityBorder = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Agi/TextureRect")
+intelligenceBorder = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Int/TextureRect")
 
-[node name="Duration" type="Timer" parent="." unique_id=208214877]
+[node name="MissionCompletionTimer" type="Timer" parent="." unique_id=208214877]
 
 [node name="WaitTime" type="Timer" parent="." unique_id=259734078]
 autostart = true
@@ -116,7 +127,7 @@ offset_left = -24.0
 offset_top = -49.0
 offset_right = 25.0
 offset_bottom = -34.0
-color = Color(0.33333334, 0.7607843, 0, 1)
+color = Color(0.3647059, 0.654902, 0.16078432, 1)
 
 [node name="Label" type="Label" parent="MissionPopup/Mission Success" unique_id=157769594]
 layout_mode = 0
@@ -211,12 +222,6 @@ offset_right = -20.0
 offset_bottom = 49.0
 texture = ExtResource("7_nbg2v")
 
-[node name="Area2D" type="Area2D" parent="MissionPopup/Slayer" unique_id=1989152174]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/Slayer/Area2D" unique_id=5380532]
-position = Vector2(14.5, 30.5)
-shape = SubResource("RectangleShape2D_3np7q")
-
 [node name="MissionDifficulty" type="ColorRect" parent="MissionPopup" unique_id=1474451964]
 offset_left = 26.0
 offset_top = -49.0
@@ -266,12 +271,6 @@ offset_right = 109.0
 offset_bottom = 311.0
 color = Color(0.4149491, 0.4149491, 0.4149491, 1)
 
-[node name="Area2D" type="Area2D" parent="ItemSlots/Slot1" unique_id=102339769]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemSlots/Slot1/Area2D" unique_id=1778419715]
-position = Vector2(41, 41.5)
-shape = SubResource("RectangleShape2D_6jhai")
-
 [node name="Slot2" type="ColorRect" parent="ItemSlots" unique_id=854175031]
 offset_left = 143.0
 offset_top = 227.0
@@ -279,21 +278,9 @@ offset_right = 224.0
 offset_bottom = 310.0
 color = Color(0.4149491, 0.4149491, 0.4149491, 1)
 
-[node name="Area2D" type="Area2D" parent="ItemSlots/Slot2" unique_id=275514005]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemSlots/Slot2/Area2D" unique_id=401398018]
-position = Vector2(41, 41.5)
-shape = SubResource("RectangleShape2D_6jhai")
-
 [node name="Slot3" type="ColorRect" parent="ItemSlots" unique_id=636324258]
 offset_left = 257.0
 offset_top = 226.0
 offset_right = 338.0
 offset_bottom = 309.0
 color = Color(0.4149491, 0.4149491, 0.4149491, 1)
-
-[node name="Area2D" type="Area2D" parent="ItemSlots/Slot3" unique_id=1548458396]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemSlots/Slot3/Area2D" unique_id=798399375]
-position = Vector2(41, 41.5)
-shape = SubResource("RectangleShape2D_6jhai")
