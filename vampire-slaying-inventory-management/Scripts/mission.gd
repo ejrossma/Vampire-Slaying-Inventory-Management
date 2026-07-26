@@ -3,6 +3,14 @@ extends Node2D
 
 enum Types { STRENGTH, AGILITY, INTELLIGENCE }
 
+@export var StartQuest : TextureButton
+
+#colors
+@export var green : Color
+@export var yellow : Color
+@export var red : Color
+@export var gray : Color
+
 #time before expiration
 @export var waitTime : Timer
 @export var waitTimeLength : float
@@ -23,11 +31,10 @@ var missionName : String
 @export var missionCompletionTimeMin : float
 var missionCompletionTime : float
 
-
 #mission difficulty
 @export var missionDifficultyLabel : Label
 @export var missionDifficultyBackground : ColorRect
-var missionDifficulty : String
+var missionDifficulty : int
 
 #success chance
 @export var successChanceLabel : Label
@@ -45,9 +52,9 @@ var secondaryTypeMult = 0.5
 @export var strengthBorder : TextureRect
 @export var agilityBorder : TextureRect
 @export var intelligenceBorder : TextureRect
-var strengthStat : int
-var agilityStat : int
-var intelligenceStat : int
+var strengthStat = 0
+var agilityStat = 0
+var intelligenceStat = 0
 
 #slayer
 @export var slayerCard : TextureRect
@@ -71,10 +78,9 @@ func _ready() -> void:
 	waitTime.timeout.connect(questExpired)
 	
 	#setup mission completion timer
-	missionCompletionTimer.wait_time = randf_range(missionCompletionTimeMin, missionCompletionTimeMax)
-	missionCompletionTimer.timeout.connect(calculateSuccess)
+	#TODO missionCompletionTimer.timeout.connect(calculateSuccess)
 	
-	$StartQuest.pressed.connect(startQuest)
+	StartQuest.pressed.connect(startQuest)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -97,15 +103,18 @@ func updateSuccessPercentage(assignedCharacter, assignedEquipment) -> int:
 	#success
 	
 #calculate if successful or not
-func calculateSuccess() -> bool:
-	if randf(0, 1) < successChance:
-		pass
+#TODO func calculateSuccess() -> bool:
+	#success
+#	if randf(0, 1) < successChance:
+#		pass
+	
 	#failure
-	else:
+#	else:
 		#check if lethal or nonlethal mission
 		#destroy gear
-		pass
+#		pass
 	
+#TODO
 func assignSlayer() -> void:
 	#add stats to mission
 	
@@ -114,23 +123,87 @@ func assignSlayer() -> void:
 	
 func unassignSlayer() -> void:
 	#remove stats from mission
+	assignedCharacter = null
+	#TODO remove visual
+	updateMissionInfo()
 	pass
-	
+
+#TODO
 #need to signify which slot it is in
-func assignEquipment() -> void:
+func assignEquipment(equipmentSlot) -> void:
 	#add stats to mission
+	
 	pass
 
 #need to signify which slot it is taken from
-func unassignEquipment() -> void:
+func unassignEquipment(equipmentSlot) -> void:
 	#remove stats from mission
+	equipmentSlot = null
+	#TODO remove visual
+	updateMissionInfo()
 	pass
 
+#TODO
 func initialMissionSetup() -> void:
 	#mission completion time
-	
-	pass
-	
+	setMissionCompletionTime()
+	#mission name
+	missionNameLabel.text = missionName
+	#mission difficulty
+	setMissionDifficulty()
+	#mission primary and secondary stat
+	setMissionPrimarySecondary()
+	#mission lethality
+	setMissionLethality()
+
+#TODO
 func updateMissionInfo() -> void:
 	
 	pass
+
+func setMissionCompletionTime() -> void:
+	missionCompletionTimeLabel.text = str(missionCompletionTime)
+	if missionCompletionTime < 11:
+		missionCompletionTimeBackground.color = green
+	elif missionCompletionTime < 16:
+		missionCompletionTimeBackground.color = yellow
+	else:
+		missionCompletionTimeBackground.color = red
+	
+func setMissionDifficulty() -> void:
+	if missionDifficulty == 0:
+		missionDifficultyBackground.color = green
+		missionDifficultyLabel.text = "EAS"
+	elif missionDifficulty == 1:
+		missionDifficultyBackground.color = yellow
+		missionDifficultyLabel.text = "MED"
+	else:
+		missionCompletionTimeBackground.color = red
+		missionDifficultyLabel.text = "HAR"
+
+func setMissionPrimarySecondary() -> void:
+	#primary
+	if primaryType == Types.STRENGTH:
+		strengthBorder.visible = true
+		strengthBorder.texture = primaryBorder
+	elif primaryType == Types.AGILITY:
+		agilityBorder.visible = true
+		agilityBorder.texture = primaryBorder
+	else:
+		intelligenceBorder.visible = true
+		intelligenceBorder.texture = primaryBorder
+	
+	#secondary
+	if secondaryType == Types.STRENGTH:
+		strengthBorder.visible = true
+		strengthBorder.texture = secondaryBorder
+	elif secondaryType == Types.AGILITY:
+		agilityBorder.visible = true
+		agilityBorder.texture = secondaryBorder
+	else:
+		intelligenceBorder.visible = true
+		intelligenceBorder.texture = secondaryBorder
+	
+func setMissionLethality() -> void:
+	return
+	
