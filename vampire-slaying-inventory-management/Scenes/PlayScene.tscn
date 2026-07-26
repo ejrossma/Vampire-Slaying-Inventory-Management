@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://ddnjjbokx1d14"]
 
-[ext_resource type="Texture2D" uid="uid://sx72baggnu61" path="res://Assets/Game Screen.png" id="1_6x5ix"]
 [ext_resource type="Script" uid="uid://du61n8tryl7td" path="res://Scripts/gameManager.gd" id="1_7vjhc"]
 [ext_resource type="PackedScene" uid="uid://bgs6tnqettyok" path="res://Scenes/GameplayObjects/Mission.tscn" id="2_353r0"]
 [ext_resource type="Script" uid="uid://beyf5lapqkpyb" path="res://Scripts/ItemData.gd" id="3_353r0"]
+[ext_resource type="Texture2D" uid="uid://cejo4x7m7p588" path="res://Assets/Game Screen with Full Bottom.png" id="3_pd2lr"]
 [ext_resource type="Script" uid="uid://1uc8wx13qrlj" path="res://Scripts/MissionData.gd" id="4_pd2lr"]
+[ext_resource type="PackedScene" uid="uid://cilcjbnqa6myi" path="res://Scenes/GameplayObjects/Slayer.tscn" id="6_pd2lr"]
 
-[node name="Node2D" type="Node2D" unique_id=809813158 node_paths=PackedStringArray("mission_parent", "FinalCountdown", "spawnInterval", "missionData", "itemData")]
+[node name="Node2D" type="Node2D" unique_id=809813158 node_paths=PackedStringArray("slayerSlots", "inventorySlots", "mission_parent", "FinalCountdown", "spawnInterval", "missionData", "itemData")]
 script = ExtResource("1_7vjhc")
+slayerSlots = NodePath("SlayerSlots")
+inventorySlots = NodePath("InventorySlots")
 mission_scene = ExtResource("2_353r0")
 mission_parent = NodePath("Missions")
 FinalCountdown = NodePath("DraculaTimer")
@@ -19,7 +22,7 @@ itemData = NodePath("ItemData")
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_6x5ix")
+texture = ExtResource("3_pd2lr")
 
 [node name="ItemData" type="Node" parent="." unique_id=2121529517]
 script = ExtResource("3_353r0")
@@ -40,3 +43,88 @@ wait_time = 5.0
 autostart = true
 
 [node name="Missions" type="Node" parent="." unique_id=102419144]
+
+[node name="Slayer" parent="." unique_id=1188395146 instance=ExtResource("6_pd2lr")]
+position = Vector2(86, 561)
+
+[node name="Slayer7" parent="." unique_id=1457566943 instance=ExtResource("6_pd2lr")]
+position = Vector2(19, 561)
+
+[node name="Slayer2" parent="." unique_id=34792126 instance=ExtResource("6_pd2lr")]
+position = Vector2(153, 561)
+
+[node name="Slayer3" parent="." unique_id=2139292383 instance=ExtResource("6_pd2lr")]
+position = Vector2(220, 561)
+
+[node name="Slayer4" parent="." unique_id=1653410770 instance=ExtResource("6_pd2lr")]
+position = Vector2(287, 561)
+
+[node name="Slayer5" parent="." unique_id=1933569312 instance=ExtResource("6_pd2lr")]
+position = Vector2(354, 561)
+
+[node name="Slayer6" parent="." unique_id=10500143 instance=ExtResource("6_pd2lr")]
+position = Vector2(421, 561)
+
+[node name="Slayer8" parent="." unique_id=304505406 instance=ExtResource("6_pd2lr")]
+position = Vector2(488, 561)
+
+[node name="Slayer9" parent="." unique_id=163086504 instance=ExtResource("6_pd2lr")]
+position = Vector2(555, 561)
+
+[node name="SlayerSlots" type="Node2D" parent="." unique_id=1973929358]
+
+[node name="Slot1" type="Node2D" parent="SlayerSlots" unique_id=1376137493]
+position = Vector2(21, 561)
+
+[node name="Slot2" type="Node2D" parent="SlayerSlots" unique_id=887278726]
+position = Vector2(88, 561)
+
+[node name="Slot3" type="Node2D" parent="SlayerSlots" unique_id=205453039]
+position = Vector2(155, 561)
+
+[node name="Slot4" type="Node2D" parent="SlayerSlots" unique_id=1545446516]
+position = Vector2(222, 561)
+
+[node name="Slot5" type="Node2D" parent="SlayerSlots" unique_id=761093084]
+position = Vector2(289, 561)
+
+[node name="Slot6" type="Node2D" parent="SlayerSlots" unique_id=1418722096]
+position = Vector2(356, 561)
+
+[node name="Slot7" type="Node2D" parent="SlayerSlots" unique_id=239167589]
+position = Vector2(423, 561)
+
+[node name="Slot8" type="Node2D" parent="SlayerSlots" unique_id=369017585]
+position = Vector2(490, 561)
+
+[node name="Slot9" type="Node2D" parent="SlayerSlots" unique_id=261009313]
+position = Vector2(557, 561)
+
+[node name="InventorySlots" type="Node2D" parent="." unique_id=1346333791]
+
+[node name="Slot1" type="Node2D" parent="InventorySlots" unique_id=59053175]
+position = Vector2(662, 561)
+
+[node name="Slot2" type="Node2D" parent="InventorySlots" unique_id=1228687351]
+position = Vector2(729, 561)
+
+[node name="Slot3" type="Node2D" parent="InventorySlots" unique_id=873285161]
+position = Vector2(796, 561)
+
+[node name="Slot4" type="Node2D" parent="InventorySlots" unique_id=1975818776]
+position = Vector2(863, 561)
+
+[node name="Slot5" type="Node2D" parent="InventorySlots" unique_id=1219434180]
+position = Vector2(930, 561)
+
+[node name="Slot6" type="Node2D" parent="InventorySlots" unique_id=1396765094]
+position = Vector2(997, 561)
+
+[node name="Slot7" type="Node2D" parent="InventorySlots" unique_id=626699385]
+position = Vector2(1064, 561)
+
+[node name="Slot8" type="Node2D" parent="InventorySlots" unique_id=11315153]
+position = Vector2(1131, 561)
+
+[node name="Slot9" type="Node2D" parent="InventorySlots" unique_id=376122525]
+position = Vector2(1198, 561)
