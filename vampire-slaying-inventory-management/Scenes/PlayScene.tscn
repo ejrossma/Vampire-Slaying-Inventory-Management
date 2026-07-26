@@ -264,3 +264,18 @@ vertical_alignment = 1
 
 [node name="Slayer" parent="." unique_id=1188395146 instance=ExtResource("2_ennkr")]
 position = Vector2(331, 542)
+
+[node name="SlayersOnMission" type="Node2D" parent="." unique_id=915278767]
+
+[node name="EquipmentOnMission" type="Node2D" parent="." unique_id=989024267]
+
+[node name="Slayer2" parent="." unique_id=1948983457 instance=ExtResource("2_ennkr")]
+position = Vector2(209, 540)
+scale = Vector2(2.525, 2.525)
+
+[node name="Slayer3" parent="." unique_id=395383845 instance=ExtResource("2_ennkr")]
+position = Vector2(82, 534)
+
+[node name="Slayer4" parent="." unique_id=2096281526 instance=ExtResource("2_ennkr")]
+position = Vector2(425, 545)
+scale = Vector2(1.33, 1.33)

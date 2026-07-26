@@ -9,12 +9,14 @@ static var instance : GameManager:
 
 #player
 var selected_item = null
+@export var slayer_on_mission = Node2D
+@export var equipment_on_mission = Node2D
 
 #signals
-signal slayer_killed()
-signal mission_spawned(mission: mission)
-signal mission_completed(mission: mission)
-signal mission_expired(mission: mission)
+signal _on_slayer_killed()
+signal _on_mission_spawned(mission: mission)
+signal _on_mission_completed(mission: mission)
+signal _on_mission_expired(mission: mission)
 
 @export var slayerSlots : Node2D
 @export var inventorySlots : Node2D
@@ -93,15 +95,21 @@ func _ready() -> void:
 	#TODO generate first slayer
 	
 	spawnInterval.timeout.connect(spawnMission)
-	mission_expired.connect(removeMission)
-	mission_completed.connect(completeMission)
+	_on_mission_expired.connect(removeMission)
+	_on_mission_completed.connect(completeMission)
 	
-func click(object) -> void:
-	#if null then set item
-	if (selected_item == null and (object is equipment or object is slayer)):
+
+func selectOrMove(object) -> void:
+	#if same item set selected_item to null
+	if (object == selected_item):
+		selected_item = null
+		return
+	#if null then set item if equipment or slayer
+	if (selected_item == null):
 		selected_item = object
+		return
 	#if item of same type then swap them
-	if (object.getclass() == selected_item.getclass()):
+	if ( (object is slayer and selected_item is slayer) or (object is equipment and selected_item is equipment) ):
 		#update indexes
 		var temp = selected_item.inventory_index
 		selected_item.inventory_index = object.inventory_index
@@ -111,9 +119,20 @@ func click(object) -> void:
 		selected_item.position = object.position
 		object.position = location
 		#set selected to null
-		selected_item == null
-	#TODO if click on empty slot on bench assign to that slot and remove reference from other index
-	
+		selected_item = null
+		return
+
+#TODO assigning slayer or item to mission
+func assign(object) -> void:
+	if selected_item is slayer:
+		selected_item.parent = slayer_on_mission
+		object.assignSlayer(selected_item)
+		#move to dedicated location on mission
+	elif selected_item is equipment:
+		selected_item.parent = equipment_on_mission
+		#TODO detect which slot number was clicked
+		#object.assignEquipment(selected_item, )
+		#move to dedicated location on mission
 
 #Card Reward Functions -----------------------------------
 func generateCardRewards() -> void:
@@ -218,7 +237,7 @@ func spawnMission() -> void:
 	newMission.primaryType = toType(newMissionData["PrimaryStat"])
 	newMission.secondaryType = toType(newMissionData["SecondaryStat"])
 	#lethality
-	newMission.isLethal = newMissionData["Lethality"]
+	newMission.isLethal = bool(newMissionData["Lethality"])
 	
 	#call missionintialsetup
 	newMission.initialMissionSetup()

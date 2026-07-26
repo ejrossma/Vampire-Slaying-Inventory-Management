@@ -18,7 +18,7 @@ enum Types { STRENGTH, AGILITY, INTELLIGENCE }
 var wasClicked : bool = false
 var started : bool = false
 var initialDuration : float
-@onready var lethal_markers: Node2D = $MissionPopup/LethalMarkers
+@export var lethal_markers: Node2D
 
 #time before expiration
 @export var waitTime : Timer
@@ -117,7 +117,7 @@ func questExpired() -> void:
 	#if there is a slayer in the quest the quest gets started
 	
 	#else it dissappears
-	GameManager.instance.mission_expired.emit(self)
+	GameManager.instance._on_mission_expired.emit(self)
 	queue_free()
 
 func updateSuccessPercentage(assignedCharacter, assignedEquipment) -> int:
@@ -134,13 +134,13 @@ func calculateSuccess() -> void:
 	#TODO destroy gear
 	
 #TODO
-func assignSlayer() -> void:
+func assignSlayer(char: slayer) -> void:
 	#add stats to mission
 	
-	#update slayer TextureRect with slayer card
+	updateMissionInfo()
 	pass
 	
-func unassignSlayer() -> void:
+func unassignSlayer(char: slayer) -> void:
 	#remove stats from mission
 	assignedCharacter = null
 	#TODO remove visual
@@ -149,13 +149,14 @@ func unassignSlayer() -> void:
 
 #TODO
 #need to signify which slot it is in
-func assignEquipment(equipmentSlot) -> void:
+func assignEquipment(item: equipment, equipmentSlot) -> void:
 	#add stats to mission
 	
+	updateMissionInfo()
 	pass
 
 #need to signify which slot it is taken from
-func unassignEquipment(equipmentSlot) -> void:
+func unassignEquipment(item: equipment, equipmentSlot) -> void:
 	#remove stats from mission
 	equipmentSlot = null
 	#TODO remove visual
@@ -175,7 +176,7 @@ func initialMissionSetup() -> void:
 	#mission lethality
 	setMissionLethality()
 
-#TODO
+#TODO for stats
 func updateMissionInfo() -> void:
 	
 	pass

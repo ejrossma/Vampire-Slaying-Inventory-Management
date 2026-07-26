@@ -117,6 +117,7 @@ theme_override_font_sizes/font_size = 24
 text = " Instructions "
 
 [node name="Instructions" type="ColorRect" parent="Control" unique_id=79864685]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -268,7 +269,9 @@ Recruit and Train more Slayers
 to Prepare to Fight Count Dracula
 
 Failing a Lethal Mission Results 
-in the Loss of a Slayer, so Beware"
+in the Loss of a Slayer
+
+Beware of Skulls"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -325,12 +328,23 @@ texture = ExtResource("6_at33a")
 [node name="TextureRect5" type="TextureRect" parent="Control/Instructions" unique_id=514923829]
 texture_filter = 1
 layout_mode = 0
-offset_left = 1016.0
-offset_top = 446.0
-offset_right = 1048.0
-offset_bottom = 478.0
+offset_left = 884.0
+offset_top = 431.0
+offset_right = 916.0
+offset_bottom = 463.0
 scale = Vector2(2, 2)
 texture = ExtResource("7_at33a")
+
+[node name="TextureRect6" type="TextureRect" parent="Control/Instructions" unique_id=2072568869]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1141.0
+offset_top = 431.0
+offset_right = 1173.0
+offset_bottom = 463.0
+scale = Vector2(2, 2)
+texture = ExtResource("7_at33a")
+flip_h = true
 
 [connection signal="pressed" from="Control/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/TextureRect/MarginContainer/VBoxContainer/HBoxContainer3/Button" to="." method="_on_button_pressed_instructions"]
