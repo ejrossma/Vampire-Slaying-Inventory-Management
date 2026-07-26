@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bew6p8ub4lgnd"
-path="res://.godot/imported/Card.png-e37ea83a6b2feb8bae1e0001a116f234.ctex"
+uid="uid://b8ly7cddn3alk"
+path="res://.godot/imported/UltimateVampireSlayerJacket.png-8cf7831c8cef1027cb4040f934b56413.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Card.png"
-dest_files=["res://.godot/imported/Card.png-e37ea83a6b2feb8bae1e0001a116f234.ctex"]
+source_file="res://Assets/Items/UltimateVampireSlayerJacket.png"
+dest_files=["res://.godot/imported/UltimateVampireSlayerJacket.png-8cf7831c8cef1027cb4040f934b56413.ctex"]
 
 [params]
 
