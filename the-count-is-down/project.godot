@@ -10,26 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Vampire Slaying Inventory Management"
-run/main_scene="uid://dnl1gn0eu1tqq"
+config/name="The Count Is Down"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-AudioManager="*uid://bv8jphm2fh5hr"
-
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-
-[dotnet]
-
-project/assembly_name="Vampire Slaying Inventory Management"
 
 [physics]
 

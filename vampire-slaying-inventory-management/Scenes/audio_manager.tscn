@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://bh8sow0pnm2xs"]
 
 [ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="1_qixve"]
+=======
+[gd_scene format=3 uid="uid://bv8jphm2fh5hr"]
+
+[ext_resource type="Script" uid="uid://34vsrfutf4mu" path="res://Scripts/audio_manager.gd" id="1_qixve"]
+>>>>>>> Stashed changes
 [ext_resource type="AudioStream" uid="uid://b3k5384bjmwre" path="res://Assets/Sounds/MainMenuTCID.wav" id="2_0hehx"]
 [ext_resource type="AudioStream" uid="uid://duoc4ewrwu8a0" path="res://Assets/Sounds/Pause.wav" id="3_mjqhu"]
 [ext_resource type="AudioStream" uid="uid://cs6lehykaviwb" path="res://Assets/Sounds/Unpause.wav" id="4_5kf6k"]
