@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cn0ou48867okd" path="res://Scenes/DummyMission.tscn" id="4_w4qjd"]
 [ext_resource type="Texture2D" uid="uid://ckdusbl6rshch" path="res://Assets/Primary Indicator.png" id="5_w4qjd"]
 [ext_resource type="Texture2D" uid="uid://bk4mj4psphukf" path="res://Assets/Secondary Indicator.png" id="6_at33a"]
+[ext_resource type="Texture2D" uid="uid://451v8o3ntf68" path="res://Assets/TimerDecoration.png" id="7_at33a"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=2132420930 node_paths=PackedStringArray("instructionsPage")]
 script = ExtResource("1_xx56i")
@@ -116,7 +117,6 @@ theme_override_font_sizes/font_size = 24
 text = " Instructions "
 
 [node name="Instructions" type="ColorRect" parent="Control" unique_id=79864685]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -321,6 +321,16 @@ offset_top = 318.0
 offset_right = 734.0
 offset_bottom = 362.0
 texture = ExtResource("6_at33a")
+
+[node name="TextureRect5" type="TextureRect" parent="Control/Instructions" unique_id=514923829]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1016.0
+offset_top = 446.0
+offset_right = 1048.0
+offset_bottom = 478.0
+scale = Vector2(2, 2)
+texture = ExtResource("7_at33a")
 
 [connection signal="pressed" from="Control/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/TextureRect/MarginContainer/VBoxContainer/HBoxContainer3/Button" to="." method="_on_button_pressed_instructions"]

@@ -98,7 +98,7 @@ func _ready() -> void:
 	
 func click(object) -> void:
 	#if null then set item
-	if (selected_item == null):
+	if (selected_item == null and (object is equipment or object is slayer)):
 		selected_item = object
 	#if item of same type then swap them
 	if (object.getclass() == selected_item.getclass()):
@@ -112,8 +112,7 @@ func click(object) -> void:
 		object.position = location
 		#set selected to null
 		selected_item == null
-	#if click on empty slot on bench assign to that slot and remove reference from other index
-	#if 
+	#TODO if click on empty slot on bench assign to that slot and remove reference from other index
 	
 
 #Card Reward Functions -----------------------------------

@@ -10,11 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dds3tnrerg2dn" path="res://Assets/Mission Popup Slayer.png" id="7_nbg2v"]
 [ext_resource type="Texture2D" uid="uid://ckdusbl6rshch" path="res://Assets/Primary Indicator.png" id="7_owsbk"]
 [ext_resource type="Texture2D" uid="uid://bk4mj4psphukf" path="res://Assets/Secondary Indicator.png" id="8_kvhnx"]
-<<<<<<< Updated upstream
-=======
-[ext_resource type="PackedScene" uid="uid://c1yrc73v07ada" path="res://Scenes/GameplayObjects/DroppableArea.tscn" id="8_yk2oi"]
 [ext_resource type="Texture2D" uid="uid://451v8o3ntf68" path="res://Assets/TimerDecoration.png" id="12_nk4yt"]
->>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1ang"]
 size = Vector2(22, 38)
