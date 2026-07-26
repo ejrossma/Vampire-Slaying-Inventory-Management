@@ -13,6 +13,7 @@ enum Types { STRENGTH, AGILITY, INTELLIGENCE }
 signal slayer_killed()
 signal mission_spawned(mission: mission)
 signal mission_completed(mission: mission)
+signal mission_expired(mission: mission)
 
 @export var mission_scene : PackedScene
 @export var mission_parent : Node
@@ -36,24 +37,18 @@ var missions : Array[mission] = []
 func _ready() -> void:
 	#TODO generate first slayer
 	
-	if (missions.size() <= slayers.size()):
-		spawnInterval.timeout.connect(spawnMission)
+	spawnInterval.timeout.connect(spawnMission)
+	mission_expired.connect(removeMission)
+	mission_completed.connect(completeMission)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-#var mission_data := {
-#			"ID": entry.get("ID", -1),
-#			"Name": entry.get("Name", ""),
-#			"Difficulty": _to_int(entry.get("Difficulty")),
-#			"Lethality": entry.get("Lethality"),
-#			"PrimaryStat": entry.get("PrimaryStat"),
-#			"SecondaryStat": entry.get("SecondaryStat")
-#		}
-
 func spawnMission() -> void:
+	if (missions.size() > slayers.size()):
+		return
 	var newMission = mission_scene.instantiate()
 	var newMissionData : Dictionary
 	#mission between 1 and 20
@@ -79,19 +74,29 @@ func spawnMission() -> void:
 	newMission.primaryType = toType(newMissionData["PrimaryStat"])
 	newMission.secondaryType = toType(newMissionData["SecondaryStat"])
 	
+	#call missionintialsetup
+	newMission.initialMissionSetup()
 	#TODO generate and set position
-	newMission.position = Vector2(100,100)
-	
+	newMission.position = generateMissionLocation()
 	#add mission to mission array
 	missions.append(newMission)
-	
 	#add mission to scene
-	add_child(newMission)
+	mission_parent.add_child(newMission)
 	
 func toType(type) -> Types:
 	if type == "Agi":
 		return Types.AGILITY
-	elif type == "str":
+	elif type == "Str":
 		return Types.STRENGTH
 	else:
 		return Types.INTELLIGENCE
+		
+func generateMissionLocation() -> Vector2:
+	return Vector2(100,100)
+	
+func removeMission(missionToErase) -> void:
+	missions.erase(missionToErase)
+
+func completeMission(missionCompleted) -> void:
+	missions.erase(missionCompleted)
+	#TODO Show rewards screen
