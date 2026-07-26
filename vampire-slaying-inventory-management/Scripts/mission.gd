@@ -96,6 +96,7 @@ func questExpired() -> void:
 	#if there is a slayer in the quest the quest gets started
 	
 	#else it dissappears
+	GameManager.instance.mission_expired.emit(self)
 	queue_free()
 
 func updateSuccessPercentage(assignedCharacter, assignedEquipment) -> int:
@@ -162,7 +163,7 @@ func updateMissionInfo() -> void:
 	pass
 
 func setMissionCompletionTime() -> void:
-	missionCompletionTimeLabel.text = str(missionCompletionTime)
+	missionCompletionTimeLabel.text = str(int(missionCompletionTime))
 	if missionCompletionTime < 11:
 		missionCompletionTimeBackground.color = green
 	elif missionCompletionTime < 16:
