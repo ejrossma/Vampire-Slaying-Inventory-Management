@@ -13,14 +13,37 @@ func play_MainMenuMusic():
 func stop_MainMenuMusic():
 		if not mute:
 				$MainMenuMusic.stop()
-func play_Pause():
+func play_PickUp():
 		if not mute:
-				#$Pause.play()
-				return
-func play_Unpause():
+				$PickUp.play()
+				
+func play_Drop():
 		if not mute:
-				#$UnPause.play()
-				return
+				$Drop.play()
+func play_Missionfail():
+		if not mute:
+				$MissionFail.play()
+func play_UISelect():
+		if not mute:
+				$UiSelect.play()	
+func play_DraculaReveal():
+		if not mute:
+				$DraculaReveal.play()
+func play_EclipseMusic():
+		if not mute:
+				$EclipseMusic.play()
+func stop_EclipseMusic():
+		if not mute:
+				$EclipseMusic.stop()
+func play_GameWin():
+		if not mute:
+			$GameWin.play()
+func play_GameOver():
+		if not mute:
+			$GameOver.play()
+
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
