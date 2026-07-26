@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://u2jkf8qego6a" path="res://Scripts/menu_scene.gd" id="1_xx56i"]
 [ext_resource type="Texture2D" uid="uid://cgluw8ldygvjp" path="res://Assets/Background Try Two.png" id="2_xx56i"]
+[ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="3_vg0ck"]
+[ext_resource type="PackedScene" uid="uid://bgs6tnqettyok" path="res://Scenes/GameplayObjects/Mission.tscn" id="4_u7fmy"]
+[ext_resource type="Texture2D" uid="uid://ckdusbl6rshch" path="res://Assets/Primary Indicator.png" id="5_w4qjd"]
+[ext_resource type="Texture2D" uid="uid://bk4mj4psphukf" path="res://Assets/Secondary Indicator.png" id="6_at33a"]
 
-[sub_resource type="FontVariation" id="FontVariation_3np7q"]
-
-[node name="CanvasLayer" type="CanvasLayer" unique_id=2132420930]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2132420930 node_paths=PackedStringArray("instructionsPage")]
 script = ExtResource("1_xx56i")
+instructionsPage = NodePath("Control/Instructions")
 
 [node name="Control" type="Control" parent="." unique_id=1668936506]
 layout_mode = 3
@@ -42,19 +45,39 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/TextureRect/MarginContainer/VBoxContainer" unique_id=78314146]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Control/TextureRect/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1973859911]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8862745, 0.1254902, 0.11764706, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_fonts/font = ExtResource("3_vg0ck")
+theme_override_font_sizes/font_size = 36
+text = "The Count is Down"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/TextureRect/MarginContainer/VBoxContainer" unique_id=2056127111]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="Control/TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1973859911]
+[node name="Label2" type="Label" parent="Control/TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1259045901]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8862745, 0.1254902, 0.11764706, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
-theme_override_fonts/font = SubResource("FontVariation_3np7q")
+theme_override_fonts/font = ExtResource("3_vg0ck")
 theme_override_font_sizes/font_size = 24
-text = "Vampire Slaying Inventory Manager
-"
+text = "A Vampire Slaying Resource Management Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/TextureRect/MarginContainer/VBoxContainer" unique_id=1871356616]
+layout_mode = 2
+theme_override_constants/margin_top = 16
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/TextureRect/MarginContainer/VBoxContainer" unique_id=2004021126]
 layout_mode = 2
@@ -68,7 +91,237 @@ size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.8862745, 0.1254902, 0.11764706, 1)
 theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.88235295, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vg0ck")
 theme_override_font_sizes/font_size = 24
-text = "   Play   "
+text = "      Play      "
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect/MarginContainer/VBoxContainer" unique_id=1009761451]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/TextureRect/MarginContainer/VBoxContainer" unique_id=1268963274]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Control/TextureRect/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1084594392]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.8862745, 0.1254902, 0.11764706, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.88235295, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vg0ck")
+theme_override_font_sizes/font_size = 24
+text = " Instructions "
+
+[node name="Instructions" type="ColorRect" parent="Control" unique_id=79864685]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.19215687, 0.19215687, 0.19215687, 0.78431374)
+
+[node name="Mission" parent="Control/Instructions" unique_id=1162786655 instance=ExtResource("4_u7fmy")]
+position = Vector2(536, 242)
+waitTimeLength = 1000.0
+
+[node name="Label" type="Label" parent="Control/Instructions" unique_id=2105303709]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 267.0
+offset_right = 484.0
+offset_bottom = 381.0
+theme_override_fonts/font = ExtResource("3_vg0ck")
+theme_override_font_sizes/font_size = 20
+text = "1
+
+Select Missions on Your Map
+
+Each Mission has a 
+Primary and Secondary Stat 
+used to Determine Success
+
+Primary
+
+Secondary"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Instructions" unique_id=1962457431]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 234.0
+offset_right = 536.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("3_vg0ck")
+theme_override_font_sizes/font_size = 14
+text = "Mission Duration"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Control/Instructions" unique_id=1385027464]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 352.0
+offset_right = 554.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("3_vg0ck")
+theme_override_font_sizes/font_size = 14
+text = "Slayer Slot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="Control/Instructions" unique_id=1322402046]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 449.0
+offset_right = 598.0
+offset_bottom = 497.0
+theme_override_fonts/font = ExtResource("3_vg0ck")
+theme_override_font_sizes/font_size = 14
+text = "Click to Start
+a Mission"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="Control/Instructions" unique_id=426007131]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 375.0
+offset_right = 831.0
+offset_bottom = 423.0
+theme_override_fonts/font = ExtResource("3_vg0ck")
+theme_override_font_sizes/font_size = 14
+text = "Item Slots"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="Control/Instructions" unique_id=548368809]
+layout_mode = 0
+offset_left = 730.0
+offset_top = 318.0
+offset_right = 843.0
+offset_bottom = 366.0
+theme_override_fonts/font = ExtResource("3_vg0ck")
+theme_override_font_sizes/font_size = 14
+text = "Player Stats
+STR, AGI, INT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Control/Instructions" unique_id=1040581646]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 208.0
+offset_right = 696.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("3_vg0ck")
+theme_override_font_sizes/font_size = 14
+text = "Success Chance"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/Instructions" unique_id=15810958]
+layout_mode = 0
+offset_left = 737.0
+offset_top = 238.0
+offset_right = 850.0
+offset_bottom = 286.0
+theme_override_fonts/font = ExtResource("3_vg0ck")
+theme_override_font_sizes/font_size = 14
+text = "Mission Difficulty"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Instructions" unique_id=1650436741]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 29.0
+offset_right = 951.0
+offset_bottom = 188.0
+theme_override_fonts/font = ExtResource("3_vg0ck")
+theme_override_font_sizes/font_size = 20
+text = "2
+
+Assign a Slayer and Items 
+to your Missions on the Map
+
+Items can only be used once, so use them wisely"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Instructions" unique_id=401029266]
+layout_mode = 0
+offset_left = 811.0
+offset_top = 267.0
+offset_right = 1280.0
+offset_bottom = 381.0
+theme_override_fonts/font = ExtResource("3_vg0ck")
+theme_override_font_sizes/font_size = 20
+text = "3
+
+Recruit and Train more Slayers
+to Prepare to Fight Count Dracula
+
+Failing a Lethal Mission Results 
+in the Loss of a Slayer, so Beware"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Control/Instructions" unique_id=1329338904]
+process_mode = 3
+layout_mode = 0
+offset_left = 582.0
+offset_top = 543.0
+offset_right = 698.0
+offset_bottom = 575.0
+theme_override_colors/font_color = Color(0.8862745, 0.1254902, 0.11764706, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.88235295, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vg0ck")
+theme_override_font_sizes/font_size = 24
+text = "   Back   "
+
+[node name="TextureRect" type="TextureRect" parent="Control/Instructions" unique_id=203943858]
+texture_filter = 1
+layout_mode = 0
+offset_left = 316.0
+offset_top = 435.0
+offset_right = 356.0
+offset_bottom = 475.0
+texture = ExtResource("5_w4qjd")
+
+[node name="TextureRect3" type="TextureRect" parent="Control/Instructions" unique_id=1177319888]
+texture_filter = 1
+layout_mode = 0
+offset_left = 598.0
+offset_top = 318.0
+offset_right = 642.0
+offset_bottom = 362.0
+texture = ExtResource("5_w4qjd")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Instructions" unique_id=1759254182]
+texture_filter = 1
+layout_mode = 0
+offset_left = 316.0
+offset_top = 490.0
+offset_right = 356.0
+offset_bottom = 530.0
+texture = ExtResource("6_at33a")
+
+[node name="TextureRect4" type="TextureRect" parent="Control/Instructions" unique_id=492423048]
+texture_filter = 1
+layout_mode = 0
+offset_left = 690.0
+offset_top = 318.0
+offset_right = 734.0
+offset_bottom = 362.0
+texture = ExtResource("6_at33a")
 
 [connection signal="pressed" from="Control/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/TextureRect/MarginContainer/VBoxContainer/HBoxContainer3/Button" to="." method="_on_button_pressed_instructions"]
+[connection signal="pressed" from="Control/Instructions/Button" to="." method="_on_button_pressed_back"]
