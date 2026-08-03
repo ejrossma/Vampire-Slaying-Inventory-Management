@@ -64,6 +64,8 @@ var secondaryTypeMult = 0.5
 @export var strengthBorder : TextureRect
 @export var agilityBorder : TextureRect
 @export var intelligenceBorder : TextureRect
+
+#mission stats
 var strengthStat = 0
 var agilityStat = 0
 var intelligenceStat = 0
@@ -132,38 +134,56 @@ func calculateSuccess() -> void:
 		missionSuccess = false
 	GameManager.instance.mission_completed.emit(self)
 	#TODO destroy gear
-	
-#TODO
+
+#TODO add visual
 func assignSlayer(char: slayer) -> void:
 	#add stats to mission
-	
+	assignedCharacter = char
+	strengthStat += char.Strength
+	agilityStat += char.Agility
+	intelligenceStat += char.Intelligence
 	updateMissionInfo()
-	pass
-	
+
+#TODO remove visual
 func unassignSlayer(char: slayer) -> void:
 	#remove stats from mission
 	assignedCharacter = null
-	#TODO remove visual
+	strengthStat -= char.Strength
+	agilityStat -= char.Agility
+	intelligenceStat -= char.Intelligence
 	updateMissionInfo()
-	pass
 
-#TODO
-#need to signify which slot it is in
+#TODO add visual
 func assignEquipment(item: equipment, equipmentSlot) -> void:
+	match equipmentSlot:
+		1:
+			assignedEquipmentOne = item
+		2:
+			assignedEquipmentTwo = item
+		3:
+			assignedEquipmentThree = item
 	#add stats to mission
-	
+	strengthStat += item.Strength
+	agilityStat += item.Agility
+	intelligenceStat += item.Intelligence
 	updateMissionInfo()
-	pass
 
+#TODO remove visual
 #need to signify which slot it is taken from
 func unassignEquipment(item: equipment, equipmentSlot) -> void:
-	#remove stats from mission
-	equipmentSlot = null
-	#TODO remove visual
+	match equipmentSlot:
+		1:
+			assignedEquipmentOne = item
+		2:
+			assignedEquipmentTwo = item
+		3:
+			assignedEquipmentThree = item
+	#remove stats to mission
+	strengthStat -= item.Strength
+	agilityStat -= item.Agility
+	intelligenceStat -= item.Intelligence
 	updateMissionInfo()
-	pass
 
-#TODO
 func initialMissionSetup() -> void:
 	#mission completion time
 	setMissionCompletionTime()
@@ -176,10 +196,18 @@ func initialMissionSetup() -> void:
 	#mission lethality
 	setMissionLethality()
 
-#TODO for stats
 func updateMissionInfo() -> void:
-	
-	pass
+	strengthLabel.text = str(strengthStat)
+	agilityLabel.text = str(agilityStat)
+	intelligenceLabel.text = str(intelligenceStat)
+	if assignedCharacter:
+		slayerCard = assignedCharacter.slayerSprite
+	if assignedEquipmentOne:
+		equipmentOneCard = assignedEquipmentOne.equipmentSprite
+	if assignedEquipmentTwo:
+		equipmentTwoCard = assignedEquipmentTwo.equipmentSprite
+	if assignedEquipmentThree:
+		equipmentThreeCard = assignedEquipmentThree.equipmentSprite
 
 func setMissionCompletionTime() -> void:
 	missionCompletionTimeLabel.text = str(int(missionCompletionTime))
@@ -230,3 +258,38 @@ func setMissionLethality() -> void:
 func toggleMenu() -> void:
 	mission_popup.visible = !mission_popup.visible
 	wasClicked = true
+
+func _on_static_body_2d_input_event_slayer(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print("Slayer Clicked")
+			if GameManager.instance.selected_item:
+				GameManager.instance.assign(self, 0)
+			
+			#if want to remove a character or item from the mission
+			#elif assignedCharacter and not GameManager.instance.selected_item:
+				#GameManager.instance.selected_item = assignedCharacter
+				#assignedCharacter = null
+			#else
+
+
+func _on_static_body_2d_input_event_item_one(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print("Equipment 1 Clicked")
+			if GameManager.instance.selected_item:
+				GameManager.instance.assign(self, 1)
+
+
+func _on_static_body_2d_input_event_item_two(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			if GameManager.instance.selected_item:
+				GameManager.instance.assign(self, 2)
+
+
+func _on_static_body_2d_input_event_item_three(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			if GameManager.instance.selected_item:
+				GameManager.instance.assign(self, 3)

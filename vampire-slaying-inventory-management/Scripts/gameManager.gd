@@ -1,16 +1,25 @@
 class_name GameManager
 extends Node
 
-static var instance : GameManager:
-	get:
-		if instance == null:
-			instance = GameManager.new()
-		return instance
+#static var instance : GameManager:
+#	get:
+#		if instance == null:
+#			instance = GameManager.new()
+#		return instance
+
+static var instance: GameManager
+
+func _enter_tree() -> void:
+	instance = self
+	
+func _exit_tree() -> void:
+	if instance == self:
+		instance = null
 
 #player
-var selected_item = null
-@export var slayer_on_mission = Node2D
-@export var equipment_on_mission = Node2D
+@onready var selected_item = null
+@onready var slayer_on_mission : Node2D = $SlayersOnMission
+@onready var equipment_on_mission : Node2D = $EquipmentOnMission
 
 #signals
 signal _on_slayer_killed()
@@ -36,7 +45,7 @@ var repToNextSlayer : int = 30
 const MAX_SLAYERS : int = 10
 var slayers : Array[slayer] = []
 const MAX_ITEMS : int = 10
-var items = []
+var items : Array[equipment] = []
 
 @export var missionData : MissionData
 @export var itemData : ItemData
@@ -93,11 +102,11 @@ var slayerNames := [
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#TODO generate first slayer
+	generateSlayer()
 	
 	spawnInterval.timeout.connect(spawnMission)
 	_on_mission_expired.connect(removeMission)
 	_on_mission_completed.connect(completeMission)
-	
 
 func selectOrMove(object) -> void:
 	#if same item set selected_item to null
@@ -123,15 +132,13 @@ func selectOrMove(object) -> void:
 		return
 
 #TODO assigning slayer or item to mission
-func assign(object) -> void:
+func assign(object, slotNumber) -> void:
 	if selected_item is slayer:
-		selected_item.parent = slayer_on_mission
+		slayer_on_mission.add_child(selected_item)
 		object.assignSlayer(selected_item)
-		#move to dedicated location on mission
 	elif selected_item is equipment:
-		selected_item.parent = equipment_on_mission
-		#TODO detect which slot number was clicked
-		#object.assignEquipment(selected_item, )
+		equipment_on_mission.add_child(selected_item)
+		object.assignEquipment(selected_item, slotNumber)
 		#move to dedicated location on mission
 
 #Card Reward Functions -----------------------------------
@@ -177,6 +184,7 @@ func selectEquipment() -> Dictionary:
 
 #Slayer Functions ----------------------------------------
 func generateSlayer() -> slayer:
+	print("slayer generated")
 	#instantiate a slayer
 	var newSlayer = slayer_scene.instantiate()
 	#select name
@@ -187,6 +195,9 @@ func generateSlayer() -> slayer:
 	newSlayer.slayerTexture = slayerSprites.pick_random()
 	#update visuals
 	newSlayer.updateCard()
+	#TODO assign to inventorySlot & track that information
+	$SlayerSlots/Slot1.add_child(newSlayer)
+	slayers.append(newSlayer)
 	#assign parent
 	#card_reward_parent.add_child(newSlayer)
 	return newSlayer

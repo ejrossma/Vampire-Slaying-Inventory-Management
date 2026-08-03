@@ -54,10 +54,10 @@ intelligenceLabel = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Int/IntStat")
 strengthBorder = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Str/TextureRect")
 agilityBorder = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Agi/TextureRect")
 intelligenceBorder = NodePath("MissionPopup/SlayerStatsNode/StrIcon/Int/TextureRect")
-slayerCard = NodePath("MissionPopup/Slayer")
-equipmentOneCard = NodePath("MissionPopup/ItemSlots/Slot1")
-equipmentTwoCard = NodePath("MissionPopup/ItemSlots/Slot2")
-equipmentThreeCard = NodePath("MissionPopup/ItemSlots/Slot3")
+slayerCard = NodePath("MissionPopup/Slayer/TextureRect")
+equipmentOneCard = NodePath("MissionPopup/ItemSlots/Slot1/TextureRect")
+equipmentTwoCard = NodePath("MissionPopup/ItemSlots/Slot2/TextureRect")
+equipmentThreeCard = NodePath("MissionPopup/ItemSlots/Slot3/TextureRect")
 
 [node name="MissionCompletionTimer" type="Timer" parent="." unique_id=208214877]
 
@@ -138,11 +138,18 @@ offset_bottom = 49.0
 mouse_filter = 2
 texture = ExtResource("5_0cygo")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="MissionPopup/ItemSlots/Slot1" unique_id=989258676]
+[node name="Area2D" type="Area2D" parent="MissionPopup/ItemSlots/Slot1" unique_id=127073518]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot1/StaticBody2D" unique_id=302347642 groups=["droppable"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot1/Area2D" unique_id=302347642 groups=["droppable"]]
 position = Vector2(11, 19)
 shape = SubResource("RectangleShape2D_p1ang")
+
+[node name="TextureRect" type="TextureRect" parent="MissionPopup/ItemSlots/Slot1" unique_id=552503680]
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 38.0
+mouse_filter = 2
+expand_mode = 1
 
 [node name="Slot2" type="TextureRect" parent="MissionPopup/ItemSlots" unique_id=1338546808]
 texture_filter = 1
@@ -153,11 +160,18 @@ offset_bottom = 49.0
 mouse_filter = 2
 texture = ExtResource("5_0cygo")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="MissionPopup/ItemSlots/Slot2" unique_id=641239363]
+[node name="Area2D" type="Area2D" parent="MissionPopup/ItemSlots/Slot2" unique_id=1945283251]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot2/StaticBody2D" unique_id=442768193 groups=["droppable"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot2/Area2D" unique_id=442768193 groups=["droppable"]]
 position = Vector2(11, 19)
 shape = SubResource("RectangleShape2D_kxch3")
+
+[node name="TextureRect" type="TextureRect" parent="MissionPopup/ItemSlots/Slot2" unique_id=397984516]
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 38.0
+mouse_filter = 2
+expand_mode = 1
 
 [node name="Slot3" type="TextureRect" parent="MissionPopup/ItemSlots" unique_id=601984007]
 texture_filter = 1
@@ -168,11 +182,18 @@ offset_bottom = 49.0
 mouse_filter = 2
 texture = ExtResource("5_0cygo")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="MissionPopup/ItemSlots/Slot3" unique_id=1796987604]
+[node name="Area2D" type="Area2D" parent="MissionPopup/ItemSlots/Slot3" unique_id=455618872]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot3/StaticBody2D" unique_id=535028508 groups=["droppable"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/ItemSlots/Slot3/Area2D" unique_id=535028508 groups=["droppable"]]
 position = Vector2(11, 19)
 shape = SubResource("RectangleShape2D_nfyp7")
+
+[node name="TextureRect" type="TextureRect" parent="MissionPopup/ItemSlots/Slot3" unique_id=868055352]
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 38.0
+mouse_filter = 2
+expand_mode = 1
 
 [node name="Slayer" type="TextureRect" parent="MissionPopup" unique_id=1988941239]
 offset_left = -49.0
@@ -182,11 +203,19 @@ offset_bottom = 49.0
 mouse_filter = 2
 texture = ExtResource("7_nbg2v")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="MissionPopup/Slayer" unique_id=1485112032]
+[node name="Area2D" type="Area2D" parent="MissionPopup/Slayer" unique_id=59985064]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/Slayer/StaticBody2D" unique_id=1668782367 groups=["droppable"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissionPopup/Slayer/Area2D" unique_id=1668782367 groups=["droppable"]]
 position = Vector2(14.5, 30.5)
 shape = SubResource("RectangleShape2D_k8rha")
+
+[node name="TextureRect" type="TextureRect" parent="MissionPopup/Slayer" unique_id=304900959]
+texture_filter = 1
+layout_mode = 0
+offset_right = 29.0
+offset_bottom = 61.0
+mouse_filter = 2
+expand_mode = 1
 
 [node name="Mission Success" type="ColorRect" parent="MissionPopup" unique_id=1087276171]
 offset_left = -24.0
@@ -360,3 +389,8 @@ offset_right = -20.0
 offset_bottom = -16.5
 scale = Vector2(0.48841316, 0.40535524)
 texture = ExtResource("12_nk4yt")
+
+[connection signal="input_event" from="MissionPopup/ItemSlots/Slot1/Area2D" to="." method="_on_static_body_2d_input_event_item_one"]
+[connection signal="input_event" from="MissionPopup/ItemSlots/Slot2/Area2D" to="." method="_on_static_body_2d_input_event_item_two"]
+[connection signal="input_event" from="MissionPopup/ItemSlots/Slot3/Area2D" to="." method="_on_static_body_2d_input_event_item_three"]
+[connection signal="input_event" from="MissionPopup/Slayer/Area2D" to="." method="_on_static_body_2d_input_event_slayer"]
