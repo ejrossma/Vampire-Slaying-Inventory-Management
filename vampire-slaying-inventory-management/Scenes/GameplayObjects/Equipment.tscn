@@ -2,14 +2,16 @@
 
 [ext_resource type="Script" uid="uid://dwxcp8k48a4jv" path="res://Scripts/equipment.gd" id="1_0srq0"]
 [ext_resource type="Texture2D" uid="uid://bew6p8ub4lgnd" path="res://Assets/card.png" id="2_wdx84"]
-[ext_resource type="Texture2D" uid="uid://bng4xr583dqvl" path="res://Assets/Slayers/Slayer1.png" id="3_wo240"]
+[ext_resource type="Texture2D" uid="uid://nka2hti1eejt" path="res://Assets/Items/Sword(Bronze).png" id="3_wdx84"]
 [ext_resource type="FontFile" uid="uid://dxoti0tx2lnap" path="res://Assets/Minecraft.ttf" id="4_ep2g6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8rha"]
 size = Vector2(32, 64)
 
-[node name="Equipment" type="Node2D" unique_id=1702663850 node_paths=PackedStringArray("equipmentSprite", "NameLabel", "IntelligenceLabel", "StrengthLabel", "AgilityLabel")]
+[node name="Equipment" type="Node2D" unique_id=1702663850 node_paths=PackedStringArray("grayBox", "equipmentSprite", "NameLabel", "IntelligenceLabel", "StrengthLabel", "AgilityLabel")]
+scale = Vector2(2, 2)
 script = ExtResource("1_0srq0")
+grayBox = NodePath("ColorRect")
 equipmentSprite = NodePath("EquipmentSprite")
 NameLabel = NodePath("EquipmentName")
 IntelligenceLabel = NodePath("Int")
@@ -29,7 +31,7 @@ offset_top = 3.0
 offset_right = 32.0
 offset_bottom = 35.0
 mouse_filter = 2
-texture = ExtResource("3_wo240")
+texture = ExtResource("3_wdx84")
 
 [node name="EquipmentName" type="Label" parent="." unique_id=743514713]
 offset_top = -8.0
@@ -82,5 +84,11 @@ vertical_alignment = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1355113486 groups=["selectable"]]
 position = Vector2(16, 32)
 shape = SubResource("RectangleShape2D_k8rha")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1638013357]
+visible = false
+offset_right = 32.0
+offset_bottom = 64.0
+color = Color(0.3764706, 0.3764706, 0.3764706, 0.47843137)
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

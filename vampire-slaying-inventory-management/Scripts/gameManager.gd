@@ -18,8 +18,6 @@ func _exit_tree() -> void:
 
 #player
 @onready var selected_item = null
-@onready var slayer_on_mission : Node2D = $SlayersOnMission
-@onready var equipment_on_mission : Node2D = $EquipmentOnMission
 
 #signals
 signal _on_slayer_killed()
@@ -104,6 +102,9 @@ func _ready() -> void:
 	#TODO generate first slayer
 	generateSlayer()
 	
+	#TODO generate first equipment
+	generateEquipment()
+	
 	spawnInterval.timeout.connect(spawnMission)
 	_on_mission_expired.connect(removeMission)
 	_on_mission_completed.connect(completeMission)
@@ -134,11 +135,11 @@ func selectOrMove(object) -> void:
 #TODO assigning slayer or item to mission
 func assign(object, slotNumber) -> void:
 	if selected_item is slayer:
-		slayer_on_mission.add_child(selected_item)
 		object.assignSlayer(selected_item)
+		selected_item = null
 	elif selected_item is equipment:
-		equipment_on_mission.add_child(selected_item)
 		object.assignEquipment(selected_item, slotNumber)
+		selected_item = null
 		#move to dedicated location on mission
 
 #Card Reward Functions -----------------------------------
@@ -154,17 +155,19 @@ func generateEquipment() -> equipment:
 	#set name
 	newEquipment.equipment_name = newEquipmentData["Item"]
 	#set stats
-	newEquipment.assignStats(Vector3i(newEquipment["StrStat"], newEquipment["AgiStat"], newEquipment["IntStat"]))
+	newEquipment.assignStats(Vector3i(newEquipmentData["StrStat"], newEquipmentData["AgiStat"], newEquipmentData["IntStat"]))
 	#set sprite
-	newEquipment.equipmentTexture = equipmentSprites[newEquipment["ID"] - 1]
+	newEquipment.equipmentTexture = equipmentSprites[newEquipmentData["ID"] - 1]
 	#update visuals
 	newEquipment.updateCard()
 	#assign parent
+	$InventorySlots/Slot1.add_child(newEquipment)
+	items.append(newEquipment)
 	#card_reward_parent.add_child(newEquipment)
 	return newEquipment
 	
 func selectEquipment() -> Dictionary:
-	var chosenEquipment : Dictionary
+	var chosenEquipment : Dictionary = itemData.get_item(19)
 	
 	#0-10 common, #11-15 uncommon, #16-19 rare, #20 mythic
 	var rarity = randi_range(0, 20)

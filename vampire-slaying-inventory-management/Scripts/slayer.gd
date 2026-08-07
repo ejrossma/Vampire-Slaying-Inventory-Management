@@ -4,6 +4,9 @@ extends Node2D
 var inventory_index : int
 var slayer_name : String
 
+var assigned : bool = false
+@export var grayBox : ColorRect
+
 var Strength : int
 var Agility : int
 var Intelligence : int
@@ -51,6 +54,10 @@ func updateCard() -> void:
 	AgilityLabel.text = str(getStat("AGILITY"))
 	NameLabel.text = slayer_name
 	slayerSprite.texture = slayerTexture
+	
+func toggleAssigned() -> void:
+	assigned = not assigned
+	grayBox.visible = not grayBox.visible
 	
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:

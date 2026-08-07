@@ -146,10 +146,10 @@ shape = SubResource("RectangleShape2D_p1ang")
 
 [node name="TextureRect" type="TextureRect" parent="MissionPopup/ItemSlots/Slot1" unique_id=552503680]
 layout_mode = 0
-offset_right = 22.0
+offset_left = -5.0
+offset_right = 27.0
 offset_bottom = 38.0
 mouse_filter = 2
-expand_mode = 1
 
 [node name="Slot2" type="TextureRect" parent="MissionPopup/ItemSlots" unique_id=1338546808]
 texture_filter = 1
@@ -168,10 +168,10 @@ shape = SubResource("RectangleShape2D_kxch3")
 
 [node name="TextureRect" type="TextureRect" parent="MissionPopup/ItemSlots/Slot2" unique_id=397984516]
 layout_mode = 0
-offset_right = 22.0
+offset_left = -5.0
+offset_right = 27.0
 offset_bottom = 38.0
 mouse_filter = 2
-expand_mode = 1
 
 [node name="Slot3" type="TextureRect" parent="MissionPopup/ItemSlots" unique_id=601984007]
 texture_filter = 1
@@ -190,10 +190,10 @@ shape = SubResource("RectangleShape2D_nfyp7")
 
 [node name="TextureRect" type="TextureRect" parent="MissionPopup/ItemSlots/Slot3" unique_id=868055352]
 layout_mode = 0
-offset_right = 22.0
+offset_left = -4.5
+offset_right = 27.5
 offset_bottom = 38.0
 mouse_filter = 2
-expand_mode = 1
 
 [node name="Slayer" type="TextureRect" parent="MissionPopup" unique_id=1988941239]
 offset_left = -49.0
@@ -212,10 +212,10 @@ shape = SubResource("RectangleShape2D_k8rha")
 [node name="TextureRect" type="TextureRect" parent="MissionPopup/Slayer" unique_id=304900959]
 texture_filter = 1
 layout_mode = 0
-offset_right = 29.0
+offset_left = -7.0
+offset_right = 35.0
 offset_bottom = 61.0
 mouse_filter = 2
-expand_mode = 1
 
 [node name="Mission Success" type="ColorRect" parent="MissionPopup" unique_id=1087276171]
 offset_left = -24.0

@@ -122,10 +122,20 @@ func questExpired() -> void:
 	GameManager.instance._on_mission_expired.emit(self)
 	queue_free()
 
-func updateSuccessPercentage(assignedCharacter, assignedEquipment) -> int:
-	return assignedCharacter.getStat(primaryType) + (assignedCharacter.getStat(secondaryType) * secondaryTypeMult)
+func updateSuccessPercentage() -> float:
+	return maxf(0.95, float( (getStat(primaryType) + (getStat(secondaryType) * secondaryTypeMult) / missionDifficulty) ) )
 	#success
 	
+func getStat(Type : Types) -> int:
+	match Type:
+		Types.STRENGTH:
+			return strengthStat
+		Types.AGILITY:
+			return agilityStat
+		Types.INTELLIGENCE:
+			return intelligenceStat
+	return 0
+
 #calculate if successful or not
 func calculateSuccess() -> void:
 	if randf() < successChance:
@@ -138,6 +148,7 @@ func calculateSuccess() -> void:
 #TODO add visual
 func assignSlayer(char: slayer) -> void:
 	#add stats to mission
+	char.toggleAssigned()
 	assignedCharacter = char
 	strengthStat += char.Strength
 	agilityStat += char.Agility
@@ -147,6 +158,7 @@ func assignSlayer(char: slayer) -> void:
 #TODO remove visual
 func unassignSlayer(char: slayer) -> void:
 	#remove stats from mission
+	char.toggleAssigned()
 	assignedCharacter = null
 	strengthStat -= char.Strength
 	agilityStat -= char.Agility
@@ -155,6 +167,7 @@ func unassignSlayer(char: slayer) -> void:
 
 #TODO add visual
 func assignEquipment(item: equipment, equipmentSlot) -> void:
+	item.toggleAssigned()
 	match equipmentSlot:
 		1:
 			assignedEquipmentOne = item
@@ -171,6 +184,7 @@ func assignEquipment(item: equipment, equipmentSlot) -> void:
 #TODO remove visual
 #need to signify which slot it is taken from
 func unassignEquipment(item: equipment, equipmentSlot) -> void:
+	item.toggleAssigned()
 	match equipmentSlot:
 		1:
 			assignedEquipmentOne = item
@@ -201,13 +215,29 @@ func updateMissionInfo() -> void:
 	agilityLabel.text = str(agilityStat)
 	intelligenceLabel.text = str(intelligenceStat)
 	if assignedCharacter:
-		slayerCard = assignedCharacter.slayerSprite
+		slayerCard.texture = assignedCharacter.slayerSprite.texture
 	if assignedEquipmentOne:
-		equipmentOneCard = assignedEquipmentOne.equipmentSprite
+		equipmentOneCard.texture = assignedEquipmentOne.equipmentSprite.texture
 	if assignedEquipmentTwo:
-		equipmentTwoCard = assignedEquipmentTwo.equipmentSprite
+		equipmentTwoCard.texture = assignedEquipmentTwo.equipmentSprite.texture
 	if assignedEquipmentThree:
-		equipmentThreeCard = assignedEquipmentThree.equipmentSprite
+		equipmentThreeCard.texture = assignedEquipmentThree.equipmentSprite.texture
+	successChance = updateSuccessPercentage()
+	setSuccessIndicator()
+
+func setSuccessIndicator() -> void:
+	if successChance > 0.85:
+		successChanceBackground.color = green
+		successChanceLabel.text = "GOOD"
+		pass
+	if successChance > 0.65:
+		successChanceBackground.color = yellow
+		successChanceLabel.text = "OKAY"
+		pass
+	else:
+		successChanceBackground.color = red
+		successChanceLabel.text = "POOR"
+		pass
 
 func setMissionCompletionTime() -> void:
 	missionCompletionTimeLabel.text = str(int(missionCompletionTime))
@@ -271,7 +301,6 @@ func _on_static_body_2d_input_event_slayer(viewport: Node, event: InputEvent, sh
 				#GameManager.instance.selected_item = assignedCharacter
 				#assignedCharacter = null
 			#else
-
 
 func _on_static_body_2d_input_event_item_one(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:

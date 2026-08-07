@@ -261,7 +261,3 @@ theme_override_font_sizes/font_size = 25
 text = "Mission Success"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="SlayersOnMission" type="Node2D" parent="." unique_id=915278767]
-
-[node name="EquipmentOnMission" type="Node2D" parent="." unique_id=989024267]

@@ -8,9 +8,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pr6wi"]
 size = Vector2(32, 64)
 
-[node name="Slayer" type="Node2D" unique_id=1188395146 node_paths=PackedStringArray("slayerSprite", "NameLabel", "IntelligenceLabel", "StrengthLabel", "AgilityLabel")]
+[node name="Slayer" type="Node2D" unique_id=1188395146 node_paths=PackedStringArray("grayBox", "slayerSprite", "NameLabel", "IntelligenceLabel", "StrengthLabel", "AgilityLabel")]
 scale = Vector2(2, 2)
 script = ExtResource("1_pr6wi")
+grayBox = NodePath("ColorRect")
 slayerSprite = NodePath("SlayerSprite")
 NameLabel = NodePath("SlayerName")
 IntelligenceLabel = NodePath("Int")
@@ -83,5 +84,12 @@ vertical_alignment = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=331366606 groups=["selectable"]]
 position = Vector2(16, 32)
 shape = SubResource("RectangleShape2D_pr6wi")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=711495331]
+visible = false
+offset_right = 32.0
+offset_bottom = 64.0
+mouse_filter = 2
+color = Color(0.3764706, 0.3764706, 0.3764706, 0.47843137)
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
